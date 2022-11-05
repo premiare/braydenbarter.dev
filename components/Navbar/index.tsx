@@ -5,6 +5,7 @@ import { VscGithubAlt } from "react-icons/vsc";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { useRouter } from "next/router";
 
 import clsx from "clsx";
 type Props = {};
@@ -51,11 +52,13 @@ const NavLink = ({
   text,
   isMobile,
   onClick,
+  route,
 }: {
   to: string;
   text: string;
   isMobile: boolean;
   onClick?: () => void;
+  route: any;
 }) => {
   return (
     <>
@@ -65,10 +68,18 @@ const NavLink = ({
           isMobile
             ? "text-6xl font-bold last-of-type:mb-8 transition transform ease-in-out"
             : "text-xl",
-          "hover:text-teal-300"
+          "hover:text-teal-300 relative group",
+          route === to ? "text-teal-300" : "text-neutral-100"
         )}
       >
         {text}
+        <span
+          className={clsx(
+            route === to ? "w-full" : "w-0",
+            "absolute -bottom-3 lg:bottom-0 left-0 group-hover:w-full h-[1px] bg-teal-300 group-hover:transition-all"
+          )}
+        ></span>
+        {/* <span className="absolute bottom-0 right-1/2 w-0 h-[1px] bg-teal-300 group-hover:w-1/2 group-hover:transition-all"></span> */}
       </Link>
     </>
   );
@@ -106,6 +117,7 @@ const SocialLink = ({
 export const Navbar = (props: Props) => {
   const [scrollY, setScrollY] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const route = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -143,6 +155,7 @@ export const Navbar = (props: Props) => {
         <div className="flex justify-center gap-4 items-center space-between w-[50%] mx-auto">
           {NavLinks.map((link) => (
             <NavLink
+              route={route.pathname}
               key={link.text}
               to={link.to}
               text={link.text}
@@ -188,6 +201,7 @@ export const Navbar = (props: Props) => {
           </div>
           {NavLinks.map((link) => (
             <NavLink
+              route={route.pathname}
               onClick={handleMenuOpen}
               key={link.text}
               to={link.to}
