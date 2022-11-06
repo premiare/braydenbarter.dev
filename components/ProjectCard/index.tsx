@@ -23,7 +23,15 @@ import { ProjectProps, TechType } from "../../types";
 import clsx from "clsx";
 
 type TechIcons = {
-  [key in TechType]: JSX.Element;
+  [key in TechType]: IndividualTech;
+};
+
+type IndividualTech = {
+  TechType: {
+    icon: JSX.Element;
+    name: string;
+    class: string;
+  };
 };
 
 const TECH: TechIcons = {
@@ -75,7 +83,7 @@ const ProjectCard = ({ project, alt }) => {
       )}
     >
       <div className="flex flex-col w-[60%] h-100 gap-4">
-        <div className="text-react text-3xl">{project.title}</div>
+        <div className="text-white text-3xl">{project.title}</div>
         <div className="text-white text-md">{project.description}</div>
         <div className="flex flex-row gap-8 w-100 mx-auto mt-4 h-auto p-8 flex-wrap">
           {project.tech.map((t: string) => {
