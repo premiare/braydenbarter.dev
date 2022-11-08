@@ -147,8 +147,8 @@ export const Navbar = (props: Props) => {
       <div
         className={clsx(
           scrollY > 50
-            ? "justify-around py-4 bg-black/30 backdrop-blur-sm shadow-md w-full fixed top-0 left-0 right-0 z-10 transition"
-            : "justify-around py-4 bg-transparent backdrop-blur-sm w-full fixed top-0 left-0 right-0 z-10 transition",
+            ? "justify-around py-4 bg-black/30 backdrop-blur-md shadow-md w-full fixed top-0 left-0 right-0 z-10 transition"
+            : "justify-around py-4 bg-transparent backdrop-blur-md w-full fixed top-0 left-0 right-0 z-10 transition",
           "hidden md:flex"
         )}
       >

@@ -22,10 +22,6 @@ import {
 import { ProjectProps, TechType } from "../../types";
 import clsx from "clsx";
 
-type TechIcons = {
-  [key in TechType]: IndividualTech;
-};
-
 type IndividualTech = {
   TechType: {
     icon: JSX.Element;
@@ -34,7 +30,7 @@ type IndividualTech = {
   };
 };
 
-const TECH: TechIcons = {
+const TECH: any = {
   next: { icon: <SiNextdotjs />, name: "Next.js", class: "text-next" },
   react: { icon: <SiReact />, name: "React", class: "text-react" },
   node: { icon: <SiNodedotjs />, name: "Node.js", class: "text-node" },
@@ -127,7 +123,7 @@ const ProjectCard = ({ project, alt }) => {
       <div className="flex flex-row mx-auto justify-center relative">
         <Image
           className="object-cover overflow-hidden"
-          src={project.image}
+          src={`/` + project.image}
           alt={project.title}
           width={200}
           height={225}

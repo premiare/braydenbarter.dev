@@ -15,6 +15,7 @@ import { SiMysql } from "react-icons/si";
 import { SiPostgresql } from "react-icons/si";
 import { SiGraphql } from "react-icons/si";
 import { SiNodeDotJs } from "react-icons/si";
+import wordle from "../public/wordle.png";
 
 const TECH = [
   "next",
@@ -34,74 +35,39 @@ const TECH = [
 
 export const projects = [
   {
-    title: "Project 1",
+    title: "Wordle Clone",
     description:
-      "Project 1 description lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    image: "https://picsum.photos/200/300",
-    link: "https://google.com",
-    code: "https://github.com",
-    tech: [
-      "react",
-      "next",
-      "tailwind",
-      "mantine",
-      "node",
-      "typescript",
-      "supabase",
-      "javascript",
-      "jquery",
-      "html",
-      "css",
-      "styledComponents",
-      "bootstrap",
-    ],
+      "A very basic Wordle clone to see if I could see the logic of the real Wordle and recreate that. Very minimal outside aid (Google, StackOverflow, viewing other Wordle projects) besides a long array of valid words.",
+    image: wordle,
+    link: "https://wordle-xi-drab.vercel.app/",
+    code: "https://github.com/premiare/wordle",
+    tech: ["react", "javascript", "tailwind"],
   },
   {
-    title: "Project 2",
+    title: "Snowkay",
     description:
-      "Project 2 description lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+      "Snowkay is a WIP snow finding app, designed for snowboarders and skiers. I'm building this with NextJS, Typescript, Mantine and a few external REST APIs.",
     image: "https://picsum.photos/200/300",
     link: "https://google.com",
     code: "https://github.com",
-    tech: ["react", "next", "tailwind", "mantine"],
+    tech: ["next", "typescript", "mantine"],
   },
   {
     title: "WoW Class Generator",
     description:
-      "Project 3 description lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+      "This project was a simple class generator for World of Warcraft. Users can select which faction they wish to play and it will generate a random race / class and spec for them. I'm planning to revisit this with a more modern design and a few more features.",
     image: "https://picsum.photos/200/300",
     link: "https://premiare.github.io/WoWClassGenerator/",
     code: "https://github.com/premiare/WoWClassGenerator",
 
-    tech: ["react", "next", "tailwind", "mantine"],
+    tech: ["html", "css", "javascript", "bootstrap"],
   },
   {
-    title: "Project 4",
-    description:
-      "Project 1 description lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    title: "Portfolio v1",
+    description: "My original portfolio website.",
     image: "https://picsum.photos/200/300",
     link: "https://google.com",
     code: "https://github.com",
-
-    tech: ["react", "next", "tailwind", "mantine"],
-  },
-  {
-    title: "Project 5",
-    description:
-      "Project 2 description lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    image: "https://picsum.photos/200/300",
-    link: "https://google.com",
-    code: "https://github.com",
-    tech: ["react", "next", "tailwind", "mantine"],
-  },
-  {
-    title: "WoW Class Generator",
-    description:
-      "Project 3 description lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    image: "https://picsum.photos/200/300",
-    link: "https://premiare.github.io/WoWClassGenerator/",
-    code: "https://github.com/premiare/WoWClassGenerator",
-
-    tech: ["react", "next", "tailwind", "mantine"],
+    tech: ["html", "css", "javascript", "jquery", "bootstrap"],
   },
 ];
