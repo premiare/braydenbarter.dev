@@ -82,7 +82,7 @@ const ProjectCard = ({ project, alt }: { project: any; alt: boolean }) => {
         <div className="text-white text-3xl">{project.title}</div>
         <div className="text-white text-md">{project.description}</div>
         <div className="flex flex-row gap-8 w-100 mx-auto mt-4 h-auto p-8 flex-wrap">
-          {project.tech.map((t: string) => {
+          {project.tech.map((t: any) => {
             console.log(t);
             return (
               <>

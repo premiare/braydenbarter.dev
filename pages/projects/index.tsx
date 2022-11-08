@@ -14,7 +14,7 @@ const Projects = (props: Props) => {
       <section className="min-h-[calc(100vh-64px)] flex flex-col items-center justify-center">
         <div className="container-xl flex ">
           <div className="justify-center w-100 mx-auto flex flex-col flex-wrap gap-4">
-            {projects.map((project: ProjectProps, index) => (
+            {projects.map((project, index) => (
               <ProjectCard
                 key={index}
                 project={project}
