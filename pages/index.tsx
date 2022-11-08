@@ -1,8 +1,5 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import { useEffect } from "react";
 import NowPlaying from "../components/NowPlaying";
-import { getNowPlaying } from "../lib/spotify";
 
 const Home: NextPage = () => {
   return (
