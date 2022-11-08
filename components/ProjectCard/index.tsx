@@ -70,7 +70,7 @@ const TECH: any = {
   },
 };
 
-const ProjectCard = ({ project, alt }) => {
+const ProjectCard = ({ project, alt }: { project: any; alt: boolean }) => {
   return (
     <div
       className={clsx(
