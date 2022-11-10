@@ -15,7 +15,7 @@ const Home: NextPage = () => {
               Front End Developer
             </h2>
           </div>
-          <NowPlaying />
+          {/* <NowPlaying /> */}
         </div>
       </section>
     </>
