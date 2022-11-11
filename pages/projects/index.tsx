@@ -11,6 +11,8 @@ const Projects = (props: Props) => {
   return (
     <>
       <title>Projects | Brayden Barter</title>
+      <h1 className="text-4xl m-8 text-center underline">Projects</h1>
+
       <section className="min-h-[calc(100vh-64px)] flex flex-col items-center justify-center">
         <div className="container-xl flex ">
           <div className="justify-center w-100 mx-auto flex flex-col flex-wrap gap-4">

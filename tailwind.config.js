@@ -27,6 +27,12 @@ module.exports = {
         photoshop: "#31a8ff",
         premiere: "#ea77ff",
         npm: "#cb3837",
+        postman: "#ff6c37",
+        vscode: "#007acc",
+        linux: "#fcc624",
+        ubuntu: "#dd4814",
+        windows: "#00adef",
+        wsl: "#4d4d4d",
       },
       fontFamily: {
         sans: ["Manrope", "sans-serif"],

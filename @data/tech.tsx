@@ -18,17 +18,23 @@ import {
   SiNpm,
   SiAdobephotoshop,
   SiAdobepremierepro,
+  SiPostman,
+  SiVisualstudiocode,
+  SiNetlify,
+  SiVercel,
+  SiUbuntu,
+  SiWindows,
 } from "react-icons/si";
 import mantine from "../public/mantine-seeklogo.com.svg";
 
-const Mantine = () => {
+const Mantine = (props: any) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="256"
-      height="258"
+      width={props.width || "24"}
+      height={props.height || "24"}
       preserveAspectRatio="xMidYMid"
-      viewBox="0 0 256 258"
+      viewBox={props.viewBox || "0 0 256 258"}
     >
       <path
         fill="#339AF0"
@@ -71,7 +77,7 @@ export const TECH: any = {
   },
   supabase: { icon: <SiSupabase />, name: "Supabase", class: "text-supabase" },
   mantine: {
-    icon: <SiBootstrap />,
+    icon: <Mantine />,
     name: "Mantine",
     class: "text-mantine",
   },
@@ -109,5 +115,35 @@ export const TECH: any = {
     icon: <SiAdobepremierepro />,
     name: "Premiere Pro",
     class: "text-premiere",
+  },
+  postman: {
+    icon: <SiPostman />,
+    name: "Postman",
+    class: "text-postman",
+  },
+  vscode: {
+    icon: <SiVisualstudiocode />,
+    name: "VS Code",
+    class: "text-vscode",
+  },
+  netlify: {
+    icon: <SiNetlify />,
+    name: "Netlify",
+    class: "text-netlify",
+  },
+  vercel: {
+    icon: <SiVercel />,
+    name: "Vercel",
+    class: "text-vercel",
+  },
+  wsl: {
+    icon: <SiUbuntu />,
+    name: "WSL2",
+    class: "text-wsl",
+  },
+  windows: {
+    icon: <SiWindows />,
+    name: "Windows",
+    class: "text-windows",
   },
 };
