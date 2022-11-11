@@ -75,18 +75,20 @@ const ProjectCard = ({ project, alt }: { project: any; alt: boolean }) => {
     <div
       className={clsx(
         alt ? "flex-row-reverse" : "flex-row",
-        "w-[75%] mx-auto h-100 border border-neutral-700 rounded-md p-8 bg-neutral-900 flex shadow-lg shadow-neutral-800 hover:border-neutral-600 hover:shadow-neutral-900 transition-all duration-300"
+        "w-[55%] mx-auto h-100 border border-neutral-700 rounded-md p-8 bg-neutral-900 flex shadow-lg shadow-neutral-800 hover:border-neutral-600 hover:shadow-neutral-900 transition-all duration-300"
       )}
     >
-      <div className="flex flex-col w-[60%] h-100 gap-4">
+      <div className="flex flex-col w-[50%] h-100 gap-4">
         <div className="text-white text-3xl">{project.title}</div>
         <div className="text-white text-md">{project.description}</div>
         <div className="flex flex-row gap-8 w-100 mx-auto mt-4 h-auto p-8 flex-wrap">
           {project.tech.map((t: any) => {
-            console.log(t);
             return (
               <>
-                <div className="flex flex-col justify-center items-center group relative">
+                <div
+                  id="cards"
+                  className="flex flex-col justify-center items-center group relative"
+                >
                   <div
                     key={t}
                     className={`text-4xl ${TECH[t].class} transition p-2`}
@@ -121,13 +123,14 @@ const ProjectCard = ({ project, alt }: { project: any; alt: boolean }) => {
         </div>
       </div>
       <div className="flex flex-row mx-auto justify-center relative">
-        <Image
+        <div className="border border-white h-40 w-40"></div>
+        {/* <Image
           className="object-cover overflow-hidden"
           src={`/` + project.image}
           alt={project.title}
           width={200}
           height={225}
-        />
+        /> */}
       </div>
     </div>
   );
