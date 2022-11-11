@@ -25,7 +25,7 @@ import {
   SiUbuntu,
   SiWindows,
 } from "react-icons/si";
-import mantine from "../public/mantine-seeklogo.com.svg";
+import { IconBrandMantine } from "@tabler/icons";
 
 const Mantine = (props: any) => {
   return (
@@ -77,7 +77,7 @@ export const TECH: any = {
   },
   supabase: { icon: <SiSupabase />, name: "Supabase", class: "text-supabase" },
   mantine: {
-    icon: <Mantine />,
+    icon: <IconBrandMantine />,
     name: "Mantine",
     class: "text-mantine",
   },

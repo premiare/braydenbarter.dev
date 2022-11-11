@@ -17,6 +17,7 @@ const About = (props: Props) => {
     tech["supabase"],
     tech["styledComponents"],
     tech["jquery"],
+    tech["mantine"],
   ];
 
   const Tools = [
