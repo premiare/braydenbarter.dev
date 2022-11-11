@@ -19,6 +19,8 @@ import {
   SiJquery,
 } from "react-icons/si";
 
+import { TECH } from "../../@data/tech";
+
 import { ProjectProps, TechType } from "../../types";
 import clsx from "clsx";
 
@@ -30,55 +32,15 @@ type IndividualTech = {
   };
 };
 
-const TECH: any = {
-  next: { icon: <SiNextdotjs />, name: "Next.js", class: "text-next" },
-  react: { icon: <SiReact />, name: "React", class: "text-react" },
-  node: { icon: <SiNodedotjs />, name: "Node.js", class: "text-node" },
-  typescript: {
-    icon: <SiTypescript />,
-    name: "TypeScript",
-    class: "text-typescript",
-  },
-  javascript: {
-    icon: <SiJavascript />,
-    name: "JavaScript",
-    class: "text-javascript",
-  },
-  jquery: { icon: <SiJquery />, name: "jQuery", class: "text-jquery" },
-  html: { icon: <SiHtml5 />, name: "HTML", class: "text-html" },
-  css: { icon: <SiCss3 />, name: "CSS", class: "text-css" },
-  tailwind: {
-    icon: <SiTailwindcss />,
-    name: "Tailwind",
-    class: "text-tailwind",
-  },
-  bootstrap: {
-    icon: <SiBootstrap />,
-    name: "Bootstrap",
-    class: "text-bootstrap",
-  },
-  supabase: { icon: <SiSupabase />, name: "Supabase", class: "text-supabase" },
-  mantine: {
-    icon: <SiStyledcomponents />,
-    name: "Mantine",
-    class: "text-mantine",
-  },
-  styledComponents: {
-    icon: <SiStyledcomponents />,
-    name: "Styled Components",
-    class: "text-styledComponents",
-  },
-};
-
 const ProjectCard = ({ project, alt }: { project: any; alt: boolean }) => {
   return (
     <div
       className={clsx(
         alt ? "flex-row-reverse" : "flex-row",
-        "w-[55%] mx-auto h-100 border border-neutral-700 rounded-md p-8 bg-neutral-900 flex shadow-lg shadow-neutral-800 hover:border-neutral-600 hover:shadow-neutral-900 transition-all duration-300"
+        "w-[90%] md:w-[55%] mx-auto h-100 border border-neutral-700 rounded-md p-8 bg-neutral-900 flex flex-col md:flex-row shadow-lg shadow-neutral-800 hover:border-neutral-600 hover:shadow-neutral-900 transition-all duration-300"
       )}
     >
-      <div className="flex flex-col w-[50%] h-100 gap-4">
+      <div className="flex flex-col w-[95%] md:w-[50%] h-100 gap-4 mx-auto">
         <div className="text-white text-3xl">{project.title}</div>
         <div className="text-white text-md">{project.description}</div>
         <div className="flex flex-row gap-8 w-100 mx-auto mt-4 h-auto p-8 flex-wrap">

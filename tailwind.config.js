@@ -21,6 +21,12 @@ module.exports = {
         sass: "#cc6699",
         bootstrap: "#563d7c",
         jquery: "#0769ad",
+        git: "#f05032",
+        github: "#181717",
+        figma: "#f24e1e",
+        photoshop: "#31a8ff",
+        premiere: "#ea77ff",
+        npm: "#cb3837",
       },
       fontFamily: {
         sans: ["Manrope", "sans-serif"],
