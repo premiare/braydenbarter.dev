@@ -35,11 +35,30 @@ const TECH = [
 
 export const projects = [
   {
+    display: false,
+    title: "Neuws",
+    description:
+      "Neuws is a React Native / Expo app that allows users to personalize their news feed by selecting their favorite news sources and topics and blocks out the rest.",
+    tech: ["react", "tailwind", "supabase", "typescript"],
+    link: "https://neuws.app",
+    image: "https://picsum.photos/1600/900",
+    code: false,
+  },
+  {
+    display: true,
+    title: "Portfolio v2 - This Website",
+    description: "This is my second (and current) portfolio website.",
+    tech: ["next", "tailwind", "typescript"],
+    link: "/",
+    image: "https://picsum.photos/1600/900",
+    code: "https://github.com/premiare/braydenbarter.dev",
+  },
+  {
     display: true,
     title: "Wordle Clone",
     description:
       "A very basic Wordle clone to see if I could see the logic of the real Wordle and recreate that. Very minimal outside aid (Google, StackOverflow, viewing other Wordle projects) besides a long array of valid words.",
-    image: wordle,
+    image: "https://picsum.photos/1600/900",
     link: "https://wordle-xi-drab.vercel.app/",
     code: "https://github.com/premiare/wordle",
     tech: ["react", "javascript", "tailwind"],
@@ -70,8 +89,8 @@ export const projects = [
     title: "Portfolio v1",
     description: "My original portfolio website.",
     image: "https://picsum.photos/1600/900",
-    link: "https://google.com",
-    code: "https://github.com",
+    link: "https://premiare.github.io/old-braydenbarter.dev/",
+    code: "https://github.com/premiare/old-braydenbarter.dev",
     tech: ["html", "css", "javascript", "jquery", "bootstrap"],
   },
   {
@@ -80,8 +99,8 @@ export const projects = [
     description:
       "A basic color toggler to give inspiration and use of new colors. The project holds about 530 unique colors, including HEX and RGB codes.",
     image: "https://picsum.photos/200/300",
-    link: "https://github.com/premiare/colorflipper",
-    code: "https://github.com",
+    link: "https://colorflipper-gules.vercel.app/",
+    code: "https://github.com/premiare/colorflipper",
     tech: ["html", "css", "javascript", "jquery"],
   },
 ];

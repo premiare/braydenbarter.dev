@@ -43,8 +43,6 @@ const ProjectCard = ({ project, alt }: { project: any; alt: boolean }) => {
     setMousePosition({ x: pageX, y: pageY });
   };
 
-  console.log(project);
-
   return (
     <div
       className={clsx(
@@ -53,34 +51,40 @@ const ProjectCard = ({ project, alt }: { project: any; alt: boolean }) => {
       )}
     >
       <div
-        className={`absolute h-full w-full top-0 left-0 z-2 bg-[url(${
-          project.image.src ? project.image.src : project.image
-        })] rounded-[5px] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-all duration-300`}
+        style={{
+          // backgroundImage: `url(${project.image})`,
+          backgroundImage: `url(https://i.picsum.photos/id/769/1600/900.jpg?hmac=BlEskHOxPa2neBwJZGhEMOxSEbLQiotPHlvNIwEuNnI)`,
+        }}
+        className={`absolute h-full w-full top-0 left-0 z-2 rounded-[5px] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-all duration-300 `}
       ></div>
       <div className="backdrop-blur-xl h-[100%] w-[100%] group-hover:backdrop-brightness-75 rounded-[5px] ">
         <div className="flex flex-col w-[95%] md:w-[50%] h-100 gap-4 mx-auto z-2 p-8">
-          <div className="text-white text-3xl group-hover:text-teal-300 transition-all duration-300">
+          <div className="text-white text-3xl text-center group-hover:text-teal-300 transition-all duration-300">
             {project.title}
           </div>
           <div className="text-white text-md">{project.description}</div>
-          <div className="flex flex-row gap-8 w-100 mx-auto mt-4 h-auto p-8 flex-wrap">
+          <div className="flex flex-row gap-4 w-100 justify-center mx-auto mt-4 h-auto p-8 flex-wrap">
             {project.tech.map((t: any) => {
               return (
                 <>
-                  <div
+                  {/* <div
+                    key={t}
                     id="cards"
                     className="flex flex-col justify-center items-center group relative"
+                  > */}
+                  <div
+                    key={t}
+                    style={{
+                      color: TECH[t]?.color,
+                    }}
+                    className={`text-4xl transition p-2 hover:scale-110 `}
                   >
-                    <div
-                      key={t}
-                      className={`text-4xl ${TECH[t].class} transition p-2 hover:scale-110 `}
-                    >
-                      {TECH[t].icon}
-                    </div>
-                    {/* <span className="text-white opacity-0 text-md absolute -bottom-6 text-lg text-center transition-all bg-transparent border px-4 h-100 w-100 flex justify-center items-center align-middle mx-auto rounded-md">
+                    {TECH[t].icon}
+                  </div>
+                  {/* <span className="text-white opacity-0 text-md absolute -bottom-6 text-lg text-center transition-all bg-transparent border px-4 h-100 w-100 flex justify-center items-center align-middle mx-auto rounded-md">
                     {TECH[t].name}
                   </span> */}
-                  </div>
+                  {/* </div> */}
                 </>
               );
             })}
@@ -94,14 +98,20 @@ const ProjectCard = ({ project, alt }: { project: any; alt: boolean }) => {
               Live Site
               <CgWebsite />
             </Link>
-            <Link
-              href={project.code}
-              target="_blank"
-              className="border border-teal-300 text-white w-36 rounded-sm flex justify-center items-center align-middle text-lg h-10 hover:bg-teal-300 hover:text-neutral-900 transition-all font-bold gap-2 "
-            >
-              Code
-              <VscGithubAlt />
-            </Link>
+            {!project.code ? (
+              <div className="border border-teal-300 text-white w-36 rounded-sm flex justify-center items-center align-middle text-lg h-10 hover:bg-teal-300 hover:text-neutral-900 transition-all font-bold gap-2 ">
+                N/A
+              </div>
+            ) : (
+              <Link
+                href={project.code}
+                target="_blank"
+                className="border border-teal-300 text-white w-36 rounded-sm flex justify-center items-center align-middle text-lg h-10 hover:bg-teal-300 hover:text-neutral-900 transition-all font-bold gap-2 "
+              >
+                Code
+                <VscGithubAlt />
+              </Link>
+            )}
           </div>
         </div>
         <div className="flex flex-row mx-auto justify-center relative">

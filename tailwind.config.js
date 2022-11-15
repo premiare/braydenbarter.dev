@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    ".{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -12,7 +13,7 @@ module.exports = {
         tailwind: "#38bdf8",
         mantine: "#339af0",
         styledComponents: "#d874b1",
-        supabase: "#f56565",
+        supabase: "#3fcf8e",
         typescript: "#3178c6",
         javascript: "#f7df1e",
         node: "#339933",
@@ -36,6 +37,9 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Manrope", "sans-serif"],
+      },
+      backgroundImage: {
+        project: "url(http://picsum.photos/1600/900)",
       },
     },
   },

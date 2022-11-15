@@ -6,7 +6,7 @@ const Home: NextPage = () => {
     <>
       <title>Brayden Barter | Front End Developer</title>
       <section className="min-h-[calc(100vh-64px)] flex items-center">
-        <div className="container-xl mx-auto">
+        <div className="container-xl mx-auto mt-[50%] md:mt-auto my-auto">
           <div className="flex flex-col items-center justify-center">
             <h1 className="text-7xl font-bold text-teal-300 text-center">
               Brayden Barter
