@@ -35,6 +35,7 @@ const TECH = [
 
 export const projects = [
   {
+    display: true,
     title: "Wordle Clone",
     description:
       "A very basic Wordle clone to see if I could see the logic of the real Wordle and recreate that. Very minimal outside aid (Google, StackOverflow, viewing other Wordle projects) besides a long array of valid words.",
@@ -44,6 +45,7 @@ export const projects = [
     tech: ["react", "javascript", "tailwind"],
   },
   {
+    display: false,
     title: "Snowkay",
     description:
       "Snowkay is a WIP snow finding app, designed for snowboarders and skiers. I'm building this with NextJS, Typescript, Mantine and a few external REST APIs.",
@@ -53,6 +55,7 @@ export const projects = [
     tech: ["next", "typescript", "mantine"],
   },
   {
+    display: true,
     title: "WoW Class Generator",
     description:
       "This project was a simple class generator for World of Warcraft. Users can select which faction they wish to play and it will generate a random race / class and spec for them. I'm planning to revisit this with a more modern design and a few more features.",
@@ -63,11 +66,22 @@ export const projects = [
     tech: ["html", "css", "javascript", "bootstrap"],
   },
   {
+    display: true,
     title: "Portfolio v1",
     description: "My original portfolio website.",
     image: "https://picsum.photos/200/300",
     link: "https://google.com",
     code: "https://github.com",
     tech: ["html", "css", "javascript", "jquery", "bootstrap"],
+  },
+  {
+    display: true,
+    title: "Color Flipper",
+    description:
+      "A basic color toggler to give inspiration and use of new colors. The project holds about 530 unique colors, including HEX and RGB codes.",
+    image: "https://picsum.photos/200/300",
+    link: "https://github.com/premiare/colorflipper",
+    code: "https://github.com",
+    tech: ["html", "css", "javascript", "jquery"],
   },
 ];
