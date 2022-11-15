@@ -71,6 +71,7 @@ const NavLink = ({
           "hover:text-teal-300 relative group",
           route === to ? "text-teal-300" : "text-neutral-100"
         )}
+        onClick={onClick}
       >
         {text}
         <span
@@ -177,13 +178,24 @@ export const Navbar = (props: Props) => {
       </div>
       {/* MOBILE NAVIGATION */}
       <div className="flex md:hidden">
-        <div className="h-12 w-12 flex items-center justify-center absolute right-2 top-2 text-4xl text-teal-300">
-          {!isMenuOpen && (
-            <AiOutlineMenu
-              onClick={handleMenuOpen}
-              className="z-100 cursor-pointer fixed"
-            />
+        <div
+          className={clsx(
+            scrollY > 50 && !isMenuOpen ? "backdrop-blur-sm bg-black/10" : "",
+            "w-[100%] h-16 z-10 fixed top-0 left-0"
           )}
+        >
+          <div
+            className={clsx(
+              "h-12 w-12 flex items-center justify-center fixed z-10 right-2 top-2 text-4xl text-teal-300"
+            )}
+          >
+            {!isMenuOpen && (
+              <AiOutlineMenu
+                onClick={handleMenuOpen}
+                className="z-100 cursor-pointer fixed"
+              />
+            )}
+          </div>
         </div>
         <div
           className={clsx(

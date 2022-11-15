@@ -49,7 +49,7 @@ export const projects = [
     title: "Snowkay",
     description:
       "Snowkay is a WIP snow finding app, designed for snowboarders and skiers. I'm building this with NextJS, Typescript, Mantine and a few external REST APIs.",
-    image: "https://picsum.photos/200/300",
+    image: "https://picsum.photos/1600/900",
     link: "https://google.com",
     code: "https://github.com",
     tech: ["next", "typescript", "mantine"],
@@ -59,7 +59,7 @@ export const projects = [
     title: "WoW Class Generator",
     description:
       "This project was a simple class generator for World of Warcraft. Users can select which faction they wish to play and it will generate a random race / class and spec for them. I'm planning to revisit this with a more modern design and a few more features.",
-    image: "https://picsum.photos/200/300",
+    image: "https://picsum.photos/1600/900",
     link: "https://premiare.github.io/WoWClassGenerator/",
     code: "https://github.com/premiare/WoWClassGenerator",
 
@@ -69,7 +69,7 @@ export const projects = [
     display: true,
     title: "Portfolio v1",
     description: "My original portfolio website.",
-    image: "https://picsum.photos/200/300",
+    image: "https://picsum.photos/1600/900",
     link: "https://google.com",
     code: "https://github.com",
     tech: ["html", "css", "javascript", "jquery", "bootstrap"],
