@@ -10,9 +10,10 @@ export const SpotifyInfo = () => {
     <>
       <div className="flex flex-row items-center gap-2">
         <SiSpotify className="text-green-500" />
-        <p className="truncate">
-          {spotify && spotify.song} - {spotify && newArtist}
-        </p>
+        <div className="flex flex-col">
+          <p className="truncate">{spotify && spotify.song}</p>
+          <p className="truncate">{spotify && newArtist}</p>
+        </div>
         <div className="h-8 w-8 rounded-full animate-spin-slow">
           <img
             src={spotify.album_art_url}
@@ -30,7 +31,6 @@ export const DiscordInfo = () => {
   if (!activity) return null;
 
   if (activity.type === 2) return null;
-  console.log(activity);
 
   const isVsCode = () => {
     return activity.name === "Visual Studio Code";

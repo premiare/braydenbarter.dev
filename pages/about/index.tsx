@@ -31,57 +31,48 @@ const About = () => {
 
   const Design = [tech["figma"], tech["premiere"], tech["photoshop"]];
 
-  const techMap = Tech.map((t) => {
+  const concat = [...Tech, ...Tools, ...Design];
+
+  const techMap = concat.map((t) => {
     return (
-      <div
-        key={t.name}
-        className="flex flex-row items-center justify-center gap-2 "
-      >
-        <div
-          style={{
-            color: t.color,
-          }}
-          className={`text-4xl hover:scale-110 transition-all`}
-        >
+      <li key={t.name} className="flex items-center space-x-2 group">
+        <div className={`text-3xl hover:scale-110 transition-all`}>
           {t.icon}
         </div>
-      </div>
+        <span className="text-md">{t.name}</span>
+      </li>
     );
   });
 
   const toolsMap = Tools.map((t) => {
     return (
-      <div
-        key={t.name}
-        className="flex flex-row items-center justify-center gap-2 group relative"
-      >
+      <li key={t.name} className="flex items-center space-x-2">
         <div
+          className={`text-3xl hover:scale-110 transition-all`}
           style={{
             color: t.color,
           }}
-          className={`text-4xl ${t.class} hover:scale-110 transition-all`}
         >
           {t.icon}
         </div>
-      </div>
+        <span className="text-md">{t.name}</span>
+      </li>
     );
   });
 
   const designMap = Design.map((t) => {
     return (
-      <div
-        key={t.name}
-        className="flex flex-row items-center justify-center gap-2 group relative"
-      >
+      <li key={t.name} className="flex items-center space-x-2">
         <div
+          className={`text-3xl hover:scale-110 transition-all`}
           style={{
             color: t.color,
           }}
-          className={`text-4xl ${t.class} hover:scale-110 transition-all`}
         >
           {t.icon}
         </div>
-      </div>
+        <span className="text-md">{t.name}</span>
+      </li>
     );
   });
 
@@ -161,21 +152,25 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-col w-[90%] md:w-[55%] justify-center gap-4 mx-auto flex-wrap">
+          <div className="flex flex-col w-full justify-center gap-4 flex-wrap">
             <div className="flex flex-col w-full">
-              <h2 className="text-2xl pb-2 text-white underline text-center">
+              <h2 className="text-2xl pb-8 text-white underline text-center">
                 Tech
               </h2>
               <div className="flex flex-row justify-center gap-4 flex-wrap">
-                {techMap}
+                <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:grid-cols-4">
+                  {techMap}
+                </ul>
               </div>
             </div>
-            <div className="flex flex-col">
+            {/* <div className="flex flex-col">
               <h2 className="text-2xl pb-2 text-white underline text-center">
                 Tools
               </h2>
               <div className="flex flex-row mx-auto justify-center gap-4 flex-wrap">
-                {toolsMap}
+                <ul className="grid grid-cols-3 gap-4 sm:grid-cols-4">
+                  {toolsMap}
+                </ul>
               </div>
             </div>
             <div className="flex flex-col">
@@ -183,9 +178,11 @@ const About = () => {
                 Design
               </h2>
               <div className="flex flex-row mx-auto justify-center gap-4 flex-wrap">
-                {designMap}
+                <ul className="grid grid-cols-3 gap-4 sm:grid-cols-4">
+                  {designMap}
+                </ul>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

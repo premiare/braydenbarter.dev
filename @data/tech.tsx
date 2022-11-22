@@ -111,14 +111,14 @@ export const TECH: any = {
     color: "#3fcf8e",
   },
   mantine: {
-    icon: <IconBrandMantine height="44" width="44" />,
+    icon: <IconBrandMantine height="36" width="36" />,
     name: "Mantine",
     class: "text-mantine",
     color: "#339AF0",
   },
   styledComponents: {
     icon: <SiStyledcomponents />,
-    name: "Styled Components",
+    name: "styled-components",
     class: "text-styledComponents",
     color: "#db7093",
   },
