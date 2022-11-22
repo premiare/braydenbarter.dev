@@ -30,9 +30,9 @@ const Home: NextPage = () => {
             </div>
           ) : (
             <>
-              <div className="flex flex-col items-center justify-center mt-4">
+              {/* <div className="flex flex-col items-center justify-center mt-4">
                 <SpotifyInfo />
-              </div>
+              </div> */}
             </>
           )}
         </div>
