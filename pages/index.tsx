@@ -8,7 +8,6 @@ const DISCORD_ID = "227252253323427840";
 
 const Home: NextPage = () => {
   const { data } = useLanyard(DISCORD_ID);
-  console.log(data);
   return (
     <>
       <title>Brayden Barter | Front End Developer</title>

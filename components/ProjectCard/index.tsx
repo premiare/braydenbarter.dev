@@ -74,10 +74,7 @@ const ProjectCard = ({ project, alt }: { project: any; alt: boolean }) => {
                   > */}
                   <div
                     key={t}
-                    style={{
-                      color: TECH[t]?.color,
-                    }}
-                    className={`text-4xl transition p-2 hover:scale-110 `}
+                    className={`text-3xl transition p-2 hover:scale-110 `}
                   >
                     {TECH[t].icon}
                   </div>
