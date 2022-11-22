@@ -30,6 +30,9 @@ export type LanyardTypes = {
 
 export const Lanyard = () => {
   const data = useLanyardWS(DISCORD_ID);
+
+  !data && console.log("Attempting to connect to Discord...");
+
   const spotify = useMemo(() => {
     if (!data?.spotify) return null;
     const { song, artist, album_art_url, track_id } = data.spotify;
@@ -38,8 +41,11 @@ export const Lanyard = () => {
 
   const activity = useMemo(() => {
     if (!data?.activities) return null;
-    const { name, type, details } = data?.activities[0];
-    return { name, type, details };
+    if (data.activities.length) {
+      const { name, type, details } = data?.activities[0];
+      return { name, type, details };
+    }
+    return null;
   }, [data]);
 
   const info = useMemo(() => {

@@ -4,12 +4,15 @@ import { Lanyard } from "../../lib/lanyard";
 
 export const SpotifyInfo = () => {
   const { spotify } = Lanyard();
-  if (!spotify) return null;
-  const newArtist = spotify.artist.split(";").join(", ");
+  if (!spotify)
+    return (
+      <div className="flex flex-row gap-2 items-center justify-center">
+        <SiSpotify className="text-gray-300" />
+        <p className="text-gray-300">Not Currently Listening to Spotify</p>
+      </div>
+    );
 
-  const isSmall = () => {
-    return window.innerWidth < 640;
-  };
+  const newArtist = spotify.artist.split(";").join(", ");
 
   return (
     <>
@@ -37,7 +40,6 @@ export const SpotifyInfo = () => {
 
 export const DiscordInfo = () => {
   const { activity } = Lanyard();
-
   if (!activity) return null;
 
   if (activity.type === 2) return null;

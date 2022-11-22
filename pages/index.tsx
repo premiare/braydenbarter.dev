@@ -21,11 +21,17 @@ const Home: NextPage = () => {
               Front End Developer
             </h2>
           </div>
-          {data && (
+          {data ? (
             <div className="flex flex-col items-center justify-center mt-4">
               {data.spotify && <SpotifyInfo />}
               {data.activities && <DiscordInfo />}
             </div>
+          ) : (
+            <>
+              <div className="flex flex-col items-center justify-center mt-4">
+                <SpotifyInfo />
+              </div>
+            </>
           )}
         </div>
       </section>

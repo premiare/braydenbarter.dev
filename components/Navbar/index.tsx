@@ -175,7 +175,7 @@ export const Navbar = () => {
         <div className="flex justify-center gap-4 items-center space-between w-[25%] mx-auto">
           <div className="relative">
             <SiDiscord className="text-3xl" />
-            {info ? (
+            {activity ? (
               <div className="absolute top-0 right-0 w-3 h-3 bg-green-500 rounded-full motion-safe:animate-ping"></div>
             ) : (
               <div className="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full"></div>
