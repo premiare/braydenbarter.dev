@@ -8,6 +8,8 @@ const DISCORD_ID = "227252253323427840";
 
 const Home: NextPage = () => {
   const { data } = useLanyard(DISCORD_ID);
+  // just using this to try out some stuff
+  const showDiscordActivity = false;
   return (
     <>
       <title>Brayden Barter | Front End Developer</title>
@@ -23,8 +25,8 @@ const Home: NextPage = () => {
           </div>
           {data ? (
             <div className="flex flex-col items-center justify-center mt-4">
-              {data.spotify && <SpotifyInfo />}
-              {data.activities && <DiscordInfo />}
+              {/* {data.spotify && <SpotifyInfo />} */}
+              {data.activities && showDiscordActivity && <DiscordInfo />}
             </div>
           ) : (
             <>

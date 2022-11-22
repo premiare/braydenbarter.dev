@@ -172,6 +172,10 @@ export const Navbar = () => {
             />
           ))}
         </div>
+        <div className="flex flex-col lg:flex-row mx-auto items-center justify-center gap-4">
+          <SpotifyInfo />
+          {/* <DiscordInfo /> */}
+        </div>
         <div className="flex justify-center gap-4 items-center space-between w-[25%] mx-auto">
           <div className="relative">
             <SiDiscord className="text-3xl" />

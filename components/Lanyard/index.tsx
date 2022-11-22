@@ -13,6 +13,9 @@ export const SpotifyInfo = () => {
     );
 
   const newArtist = spotify.artist.split(";").join(", ");
+  const shortenSong = spotify.song.split(" ").slice(0, 5).join(" ");
+  const shortenArist = newArtist.split(" ").slice(0, 5).join(" ");
+  console.log(shortenSong, shortenArist);
 
   return (
     <>
