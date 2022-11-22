@@ -2,13 +2,20 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { CiTwitter } from "react-icons/ci";
 import { VscGithubAlt } from "react-icons/vsc";
-import { SlSocialLinkedin } from "react-icons/sl";
+import { SlGameController, SlSocialLinkedin } from "react-icons/sl";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useRouter } from "next/router";
-
+import {
+  Lanyard,
+  LanyardTypes,
+  Spotify,
+  Activity,
+  Info,
+} from "../../lib/lanyard";
+import { SpotifyInfo, DiscordInfo } from "../Lanyard";
 import clsx from "clsx";
-type Props = {};
+import { SiDiscord, SiSpotify, SiVisualstudio } from "react-icons/si";
 
 const NavLinks = [
   {
@@ -115,11 +122,12 @@ const SocialLink = ({
   );
 };
 
-export const Navbar = (props: Props) => {
+export const Navbar = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const route = useRouter();
 
+  const { spotify, activity, info } = Lanyard();
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -153,7 +161,7 @@ export const Navbar = (props: Props) => {
           "hidden md:flex"
         )}
       >
-        <div className="flex justify-center gap-4 items-center space-between w-[50%] mx-auto">
+        <div className="flex justify-center gap-4 items-center space-between w-[25%] mx-auto">
           {NavLinks.map((link) => (
             <NavLink
               route={route.pathname}
@@ -165,6 +173,15 @@ export const Navbar = (props: Props) => {
           ))}
         </div>
         <div className="flex justify-center gap-4 items-center space-between w-[25%] mx-auto">
+          <div className="relative">
+            <SiDiscord className="text-3xl" />
+            {info ? (
+              <div className="absolute top-0 right-0 w-3 h-3 bg-green-500 rounded-full motion-safe:animate-ping"></div>
+            ) : (
+              <div className="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full"></div>
+            )}
+          </div>
+
           {SocialIcons.map((icon) => (
             <SocialLink
               isMobile={isMenuOpen}
@@ -232,6 +249,9 @@ export const Navbar = (props: Props) => {
                 icon={icon.icon}
               />
             ))}
+          </div>
+          <div className="pt-8">
+            <SpotifyInfo />
           </div>
         </div>
       </div>

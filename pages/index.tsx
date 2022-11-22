@@ -1,7 +1,14 @@
 import type { NextPage } from "next";
-import NowPlaying from "../components/NowPlaying";
+// import NowPlaying from "../components/NowPlaying";
+import { useLanyard } from "use-lanyard";
+
+import { SpotifyInfo, DiscordInfo } from "../components/Lanyard";
+
+const DISCORD_ID = "227252253323427840";
 
 const Home: NextPage = () => {
+  const { data } = useLanyard(DISCORD_ID);
+  console.log(data);
   return (
     <>
       <title>Brayden Barter | Front End Developer</title>
@@ -15,7 +22,12 @@ const Home: NextPage = () => {
               Front End Developer
             </h2>
           </div>
-          {/* <NowPlaying /> */}
+          {data && (
+            <div className="flex flex-col items-center justify-center mt-4">
+              {data.spotify && <SpotifyInfo />}
+              {data.activities && <DiscordInfo />}
+            </div>
+          )}
         </div>
       </section>
     </>
