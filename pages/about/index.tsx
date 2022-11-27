@@ -17,6 +17,7 @@ const About = () => {
     tech["styledComponents"],
     tech["jquery"],
     tech["mantine"],
+    tech["expo"],
   ];
 
   const Tools = [
@@ -135,12 +136,11 @@ const About = () => {
                 </a>{" "}
                 browser extension to see what`s trending and what is up and
                 coming. <br /> <br /> I currently work as a Front End Developer
-                at a small Fintech startup based in Melbourne. In my day job, I
-                work our new tech stack which includes React, Tailwind, Mantine
-                and PHP to name a few, as well as our legacy tech stack which is
-                Vue, jQuery, CakePHP and Node. <br /> <br /> I am currently
-                working on a few personal projects, which aren&apos;t quite
-                ready to be shared on the{" "}
+                at a small FinTech startup based in Melbourne. In my day job, I
+                work with React, Tailwind, Mantine and PHP, as well as our
+                legacy tech stack which is Vue, jQuery, CakePHP and Node. <br />{" "}
+                <br /> I am currently working on a few personal projects, which
+                aren&apos;t quite ready to be shared on the{" "}
                 <Link
                   href="/projects"
                   className="text-teal-300 hover:underline"
@@ -148,7 +148,7 @@ const About = () => {
                   Projects
                 </Link>{" "}
                 page, but they include some cool tech like Next.js, Supabase,
-                OpenAI (GPT-3), React Native and more.
+                OpenAI, React Native and more.
               </p>
             </div>
           </div>

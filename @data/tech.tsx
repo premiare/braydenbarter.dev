@@ -24,6 +24,7 @@ import {
   SiVercel,
   SiUbuntu,
   SiWindows,
+  SiExpo,
 } from "react-icons/si";
 import { IconBrandMantine } from "@tabler/icons";
 
@@ -193,5 +194,11 @@ export const TECH: any = {
     name: "Windows",
     class: "text-windows",
     color: "#00adef",
+  },
+  expo: {
+    icon: <SiExpo />,
+    name: "Expo",
+    class: "text-expo",
+    color: "#000020",
   },
 };

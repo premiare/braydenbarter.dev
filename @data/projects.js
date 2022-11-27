@@ -1,22 +1,3 @@
-import { SiNextdotjs } from "react-icons/si";
-import { SiReact } from "react-icons/fa";
-import { DiJavascript1 } from "react-icons/di";
-import { SiHtml5 } from "react-icons/si";
-import { SiCss3 } from "react-icons/si";
-import { SiSass } from "react-icons/si";
-import { SiStyledComponents } from "react-icons/si";
-import { SiRedux } from "react-icons/si";
-import { SiTypescript } from "react-icons/si";
-import { SiMaterialUi } from "react-icons/si";
-import { SiTailwindcss } from "react-icons/si";
-import { SiFirebase } from "react-icons/si";
-import { SiMongodb } from "react-icons/si";
-import { SiMysql } from "react-icons/si";
-import { SiPostgresql } from "react-icons/si";
-import { SiGraphql } from "react-icons/si";
-import { SiNodeDotJs } from "react-icons/si";
-import wordle from "../public/wordle.png";
-
 const TECH = [
   "next",
   "react",
@@ -35,11 +16,11 @@ const TECH = [
 
 export const projects = [
   {
-    display: false,
+    display: true,
     title: "Neuws",
     description:
       "Neuws is a React Native / Expo app that allows users to personalize their news feed by selecting their favorite news sources and topics and blocks out the rest.",
-    tech: ["react", "tailwind", "supabase", "typescript"],
+    tech: ["react", "expo", "typescript", "tailwind", "supabase"],
     link: "https://neuws.app",
     image: "https://picsum.photos/1600/900",
     code: false,
