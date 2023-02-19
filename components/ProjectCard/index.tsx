@@ -52,8 +52,8 @@ const ProjectCard = ({ project, alt }: { project: any; alt: boolean }) => {
     >
       <div
         style={{
-          // backgroundImage: `url(${project.image})`,
-          backgroundImage: `url(https://i.picsum.photos/id/769/1600/900.jpg?hmac=BlEskHOxPa2neBwJZGhEMOxSEbLQiotPHlvNIwEuNnI)`,
+          backgroundImage: `url(${project.image})`,
+          // backgroundImage: `url(https://i.picsum.photos/id/769/1600/900.jpg?hmac=BlEskHOxPa2neBwJZGhEMOxSEbLQiotPHlvNIwEuNnI)`,
         }}
         className={`absolute h-full w-full top-0 left-0 z-2 rounded-[5px] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-all duration-300 `}
       ></div>
