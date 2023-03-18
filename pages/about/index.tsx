@@ -157,32 +157,12 @@ const About = () => {
               <h2 className="text-2xl pb-8 text-white underline text-center">
                 Tech
               </h2>
-              <div className="flex flex-row justify-center gap-4 flex-wrap">
+              <div className="flex flex-row justify-center gap-4 flex-wrap text-white">
                 <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:grid-cols-4">
                   {techMap}
                 </ul>
               </div>
             </div>
-            {/* <div className="flex flex-col">
-              <h2 className="text-2xl pb-2 text-white underline text-center">
-                Tools
-              </h2>
-              <div className="flex flex-row mx-auto justify-center gap-4 flex-wrap">
-                <ul className="grid grid-cols-3 gap-4 sm:grid-cols-4">
-                  {toolsMap}
-                </ul>
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <h2 className="text-2xl pb-2 text-white underline text-center">
-                Design
-              </h2>
-              <div className="flex flex-row mx-auto justify-center gap-4 flex-wrap">
-                <ul className="grid grid-cols-3 gap-4 sm:grid-cols-4">
-                  {designMap}
-                </ul>
-              </div>
-            </div> */}
           </div>
         </div>
       </section>
