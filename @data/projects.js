@@ -20,7 +20,7 @@ export const projects = [
     title: "Neuws",
     description:
       "Neuws is a React Native / Expo app that allows users to personalize their news feed by selecting their favorite news sources and topics and blocks out the rest.",
-    tech: ["react", "expo", "typescript", "tailwind", "supabase"],
+    tech: ["react", "expo", "typescript", "tailwind", "supabase", "node"],
     link: "https://neuws.app",
     image: "https://picsum.photos/1600/900",
     code: false,
