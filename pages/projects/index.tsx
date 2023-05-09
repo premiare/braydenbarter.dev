@@ -1,6 +1,6 @@
 import React from "react";
 import { projects } from "../../@data/projects";
-import { ProjectProps } from "../../types";
+import { ProjectProps } from "../../types/types";
 import ProjectCard from "../../components/ProjectCard";
 
 const Projects = () => {

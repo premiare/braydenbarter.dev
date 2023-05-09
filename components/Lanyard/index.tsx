@@ -1,6 +1,7 @@
 import { SiSpotify, SiVisualstudio } from "react-icons/si";
 import { SlGameController } from "react-icons/sl";
 import { Lanyard } from "../../lib/lanyard";
+import Image from "next/image";
 
 export const SpotifyInfo = () => {
   const { spotify } = Lanyard();
@@ -15,7 +16,6 @@ export const SpotifyInfo = () => {
   const newArtist = spotify.artist.split(";").join(", ");
   const shortenSong = spotify.song.split(" ").slice(0, 5).join(" ");
   const shortenArist = newArtist.split(" ").slice(0, 5).join(" ");
-  console.log(shortenSong, shortenArist);
 
   return (
     <>
@@ -32,6 +32,7 @@ export const SpotifyInfo = () => {
 
         <div className="h-8 w-8 rounded-full animate-spin-slow">
           <img
+            alt="Now Listening Album Art"
             src={spotify.album_art_url}
             className="h-full w-full rounded-full"
           />
@@ -43,6 +44,7 @@ export const SpotifyInfo = () => {
 
 export const DiscordInfo = () => {
   const { activity } = Lanyard();
+  console.log(activity);
   if (!activity) return null;
 
   if (activity.type === 2) return null;
@@ -57,7 +59,7 @@ export const DiscordInfo = () => {
         {activity && isVsCode() && activity.type === 0 && (
           <>
             <SiVisualstudio className="h-8 text-teal-300" />
-            <p className="truncate">
+            <p className="">
               {activity.details} in {activity.name}
             </p>
           </>
@@ -65,7 +67,7 @@ export const DiscordInfo = () => {
         {activity && !isVsCode() && activity.type === 0 && (
           <>
             <SlGameController className="h-8 text-teal-300" />
-            <p className="truncate">Playing {activity.name}</p>
+            <p className="">Playing {activity.name}</p>
           </>
         )}
       </div>
