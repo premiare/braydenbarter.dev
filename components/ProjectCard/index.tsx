@@ -21,7 +21,7 @@ import {
 
 import { TECH } from "../../@data/tech";
 
-import { ProjectProps, TechType } from "../../types";
+import { ProjectProps, TechType } from "../../types/types";
 import clsx from "clsx";
 
 type IndividualTech = {

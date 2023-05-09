@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useLanyardWS } from "use-lanyard";
+import { useLanyard, useLanyardWS } from "use-lanyard";
 
 const DISCORD_ID = "227252253323427840";
 
@@ -42,8 +42,19 @@ export const Lanyard = () => {
   const activity = useMemo(() => {
     if (!data?.activities) return null;
     if (data.activities.length) {
-      const { name, type, details } = data?.activities[0];
-      return { name, type, details };
+      const notSpotifyActivities = data.activities.filter(
+        (activity) => activity.name !== "Spotify"
+      );
+
+      if (notSpotifyActivities.length) {
+        const { name, type, details, emoji, flags, application_id } =
+          notSpotifyActivities[0];
+        return { name, type, details, emoji, flags, application_id };
+      }
+
+      const { name, type, details, emoji, flags, application_id } =
+        data?.activities[0];
+      return { name, type, details, emoji, flags, application_id };
     }
     return null;
   }, [data]);

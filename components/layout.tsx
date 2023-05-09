@@ -7,7 +7,7 @@ const manrope = Manrope();
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <div className={clsx("bg-neutral-800", manrope.className)}>
+      <div className={clsx("bg-[#1d1d1d]", manrope.className)}>
         <Navbar />
         <main>{children}</main>
       </div>

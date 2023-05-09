@@ -1,15 +1,50 @@
 import type { NextPage } from "next";
-// import NowPlaying from "../components/NowPlaying";
-import { useLanyard } from "use-lanyard";
-
-import { SpotifyInfo, DiscordInfo } from "../components/Lanyard";
-
-const DISCORD_ID = "227252253323427840";
+import { octokit } from "../lib/octokit";
+import { useEffect, useState } from "react";
+import { LandingActivity } from "../components/LandingActivity";
+import { LatestCommitType } from "../types/types";
 
 const Home: NextPage = () => {
-  const { data } = useLanyard(DISCORD_ID);
-  // just using this to try out some stuff
-  const showDiscordActivity = false;
+  const [githubData, setGithubData] = useState<any>([]);
+
+  const getGithubData = async () => {
+    const user = await octokit.request("GET /users/{username}", {
+      username: "premiare",
+    });
+
+    const userData = user.data;
+
+    const repos = await octokit.request("GET /users/{username}/repos", {
+      username: "premiare",
+      sort: "updated",
+    });
+
+    const reposData = repos.data;
+    console.log({
+      reposData,
+      userData,
+    });
+    setGithubData({
+      reposData,
+      userData,
+    });
+
+    return {
+      reposData,
+      userData,
+    };
+  };
+
+  useEffect(() => {
+    getGithubData();
+  }, []);
+
+  const latestCommit: LatestCommitType = {
+    commitDate: githubData?.reposData?.[0]?.updated_at,
+    repoName: githubData?.reposData?.[0]?.name,
+    repoLink: githubData?.reposData?.[0]?.html_url || "",
+  };
+
   return (
     <>
       <title>Brayden Barter | Front End Developer</title>
@@ -23,18 +58,7 @@ const Home: NextPage = () => {
               Front End Developer
             </h2>
           </div>
-          {data ? (
-            <div className="flex flex-col items-center justify-center mt-4">
-              {/* {data.spotify && <SpotifyInfo />} */}
-              {data.activities && showDiscordActivity && <DiscordInfo />}
-            </div>
-          ) : (
-            <>
-              {/* <div className="flex flex-col items-center justify-center mt-4">
-                <SpotifyInfo />
-              </div> */}
-            </>
-          )}
+          <LandingActivity data={latestCommit} />
         </div>
       </section>
     </>

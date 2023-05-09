@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { animate } from "motion";
 
 import fetcher from "../../lib/fetcher";
-import { NowPlayingSong } from "../../types";
+import { NowPlayingSong } from "../../types/types";
 
 function AnimatedBars() {
   useEffect(() => {
