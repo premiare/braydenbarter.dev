@@ -44,7 +44,6 @@ export const SpotifyInfo = () => {
 
 export const DiscordInfo = () => {
   const { activity } = Lanyard();
-  console.log(activity);
   if (!activity) return null;
 
   if (activity.type === 2) return null;
@@ -52,7 +51,6 @@ export const DiscordInfo = () => {
   const isVsCode = () => {
     return activity.name === "Visual Studio Code";
   };
-
   return (
     <>
       <div className="flex flex-row items-center gap-2 w-100">

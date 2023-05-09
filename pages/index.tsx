@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { octokit } from "../lib/octokit";
 import { useEffect, useState } from "react";
 import { LandingActivity } from "../components/LandingActivity";
-import { LatestCommitType } from "../types/types";
+import { GitHubRepository, LatestCommitType } from "../types/types";
 
 const Home: NextPage = () => {
   const [githubData, setGithubData] = useState<any>([]);
@@ -39,8 +39,21 @@ const Home: NextPage = () => {
     getGithubData();
   }, []);
 
+  // TODO: fix this any type
+  // Sorts the repos by the latest commit date - pushed_at
+  const latest: LatestCommitType = githubData?.reposData?.sort(
+    (prev: any, current: GitHubRepository) => {
+      console.log({ prev, current });
+      return (
+        new Date(current.pushed_at).getTime() -
+        new Date(prev.pushed_at).getTime()
+      );
+    },
+    {}
+  );
+
   const latestCommit: LatestCommitType = {
-    commitDate: githubData?.reposData?.[0]?.updated_at,
+    commitDate: githubData?.reposData?.[0]?.pushed_at,
     repoName: githubData?.reposData?.[0]?.name,
     repoLink: githubData?.reposData?.[0]?.html_url || "",
   };
