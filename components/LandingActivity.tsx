@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { CountdownTimer } from "./Countdown";
+import { CountdownTimer } from "./CountdownTimer";
 import { LatestCommitType } from "../types/types";
 import { DiscordInfo } from "./Lanyard";
-import Link from "next/link";
 
 type DataType = {
   data: LatestCommitType;
