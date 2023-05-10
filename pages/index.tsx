@@ -3,8 +3,14 @@ import { octokit } from "../lib/octokit";
 import { useEffect, useState } from "react";
 import { LandingActivity } from "../components/LandingActivity";
 import { GitHubRepository, LatestCommitType } from "../types/types";
+import { getAccessToken, getTopTracks } from "../lib/spotify";
+import { SpotifyStats } from "../components/SpotifyStats";
+import mockSpotify from "./../@data/mockSpotify.json";
+import { SpotifySample } from "../components/SpotifySample";
 
-const Home: NextPage = () => {
+const Home: NextPage = (props) => {
+  console.log(props);
+
   const [githubData, setGithubData] = useState<any>([]);
 
   const getGithubData = async () => {
@@ -43,7 +49,6 @@ const Home: NextPage = () => {
   // Sorts the repos by the latest commit date - pushed_at
   const latest: LatestCommitType = githubData?.reposData?.sort(
     (prev: any, current: GitHubRepository) => {
-      console.log({ prev, current });
       return (
         new Date(current.pushed_at).getTime() -
         new Date(prev.pushed_at).getTime()
@@ -76,6 +81,16 @@ const Home: NextPage = () => {
       </section>
     </>
   );
+};
+
+export const getStaticProps = async () => {
+  return {
+    props: {
+      client_token: process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID,
+      client_secret: process.env.SPOTIFY_CLIENT_SECRET,
+      // tracks: topTracks || [],
+    },
+  };
 };
 
 export default Home;

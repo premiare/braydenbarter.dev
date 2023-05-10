@@ -11,8 +11,6 @@ enum SpinnerSize {
   lg = "h-12 w-12",
 }
 
-console.log(SpinnerSize);
-
 export const LoadingSpinner = ({ color, size }: LoadingSpinnerProps) => {
   return (
     <svg
