@@ -23,6 +23,13 @@ const Home: NextPage = (props) => {
       sort: "updated",
     });
 
+    // const allRepos = await octokit.request("GET /user/repos", {
+    //   headers: {
+    //     Authorization: `token ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
+    //     "X-GitHub-Api-Version": "2022-11-28",
+    //   },
+    // });
+
     const reposData = repos.data;
     console.log({
       reposData,
@@ -83,8 +90,8 @@ const Home: NextPage = (props) => {
 export const getStaticProps = async () => {
   return {
     props: {
-      client_token: process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID,
-      client_secret: process.env.SPOTIFY_CLIENT_SECRET,
+      spotify_client_token: process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID,
+      spotify_client_secret: process.env.SPOTIFY_CLIENT_SECRET,
       // tracks: topTracks || [],
     },
   };

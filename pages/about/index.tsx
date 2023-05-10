@@ -119,7 +119,7 @@ const About = () => {
             );
           })}
         </div>
-        <div className="w-[95%] h-[90%] md:w-[55%] mx-auto min-h-full md:h-100 border border-neutral-700 rounded-md p-8 bg-neutral-900 flex flex-col shadow-lg shadow-neutral-800  hover:border-teal-300 hover:shadow-neutral-900 transition-all duration-300 gap-4 mb-12">
+        <div className="w-[95%] h-[90%] md:w-[75%] lg:w-[65%] mx-auto min-h-full md:h-100 border border-neutral-700 rounded-md p-8 bg-neutral-900 flex flex-col shadow-lg shadow-neutral-800  hover:border-teal-300 hover:shadow-neutral-900 transition-all duration-300 gap-4 mb-12">
           <div className="flex flex-col md:flex-row gap-4 w-full h-100 mx-auto">
             <div className="flex flex-col w-[90%] h-100 mx-auto p-0 py-2 md:p-8 md:px-4 text-white">
               <p>

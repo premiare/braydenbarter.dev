@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { removeHyphen } from "../helpers/removeHyphen";
 import Link from "next/link";
 import { Counter } from "./Counter";
+import AnimatedNumber from "./AnimatedNumber";
 
 export const CountdownTimer = ({
   endDate,
@@ -44,12 +45,14 @@ export const CountdownTimer = ({
   return (
     <>
       <div className="flex flex-row items-center justify-center mt-8 text-center md:text-start px-4 md:px-6">
-        <p className="w-full flex indent-1 flex-wrap md:flex-row justify-center ">
+        <p className="w-full flex flex-wrap indent-1 md:flex-row justify-center">
           My latest commit was{" "}
-          <Counter endNumber={removeHyphen(days)} unit="d" />
-          <Counter endNumber={removeHyphen(hours)} unit="h" />
-          <Counter endNumber={removeHyphen(minutes)} unit="m" />
-          <Counter endNumber={removeHyphen(seconds)} unit="s" />
+          <span className="flex flex-row ml-[2px]">
+            <AnimatedNumber value={removeHyphen(days)} unit="d" />
+            <AnimatedNumber value={removeHyphen(hours)} unit="h" />
+            <AnimatedNumber value={removeHyphen(minutes)} unit="m" />
+            <AnimatedNumber value={removeHyphen(seconds)} unit="s" />
+          </span>
           ago while working on{" "}
           <span className="text-teal-300 hover:underline">
             <Link href={repoLink} target="_blank">
