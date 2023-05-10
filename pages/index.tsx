@@ -92,7 +92,6 @@ export const getStaticProps = async () => {
     props: {
       spotify_client_token: process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID,
       spotify_client_secret: process.env.SPOTIFY_CLIENT_SECRET,
-      github_token: process.env.GITHUB_PERSONAL_ACCESS_FINE_GRAIN_TOKEN,
       // tracks: topTracks || [],
     },
   };
