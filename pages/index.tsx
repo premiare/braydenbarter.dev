@@ -9,8 +9,6 @@ import mockSpotify from "./../@data/mockSpotify.json";
 import { SpotifySample } from "../components/SpotifySample";
 
 const Home: NextPage = (props) => {
-  console.log(props);
-
   const [githubData, setGithubData] = useState<any>([]);
 
   const getGithubData = async () => {
@@ -62,7 +60,6 @@ const Home: NextPage = (props) => {
     repoName: githubData?.reposData?.[0]?.name,
     repoLink: githubData?.reposData?.[0]?.html_url || "",
   };
-
   return (
     <>
       <title>Brayden Barter | Front End Developer</title>

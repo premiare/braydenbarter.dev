@@ -22,10 +22,13 @@ export const CountdownTimer = ({
 
   const getTime = useCallback(() => {
     const time = Date.parse(endDate) - Date.now();
-    setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
-    setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
-    setMinutes(Math.floor((time / 1000 / 60) % 60));
-    setSeconds(Math.floor((time / 1000) % 60));
+
+    // Math.ceil here insted of Math.floor because the values are technically negative and the hypen is removed in the Counter component
+    // Math.floor rounds down, so the value would be -1 instead of 0 but the hyphen was then removed, making -1 look like 1 etc.
+    setDays(Math.ceil(time / (1000 * 60 * 60 * 24)));
+    setHours(Math.ceil((time / (1000 * 60 * 60)) % 24));
+    setMinutes(Math.ceil((time / 1000 / 60) % 60));
+    setSeconds(Math.ceil((time / 1000) % 60));
     setInit(false);
   }, [endDate]);
 
