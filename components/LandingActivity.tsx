@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CountdownTimer } from "./countdown";
+import { CountdownTimer } from "./Countdown";
 import { LatestCommitType } from "../types/types";
 import { DiscordInfo } from "./Lanyard";
 import Link from "next/link";
