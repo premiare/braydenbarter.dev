@@ -169,3 +169,12 @@ export interface GitHubDataObject {
   userData: GitHubUser;
   reposData: GitHubRepository[];
 }
+
+export interface CardProps {
+  title: string;
+  subtitle: string;
+  desc: string;
+  icon: React.ReactNode;
+  color: string;
+  image?: string;
+}

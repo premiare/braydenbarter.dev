@@ -3,10 +3,6 @@ import { octokit } from "../lib/octokit";
 import { useEffect, useState } from "react";
 import { LandingActivity } from "../components/LandingActivity";
 import { GitHubRepository, LatestCommitType } from "../types/types";
-import { getAccessToken, getTopTracks } from "../lib/spotify";
-import { SpotifyStats } from "../components/SpotifyStats";
-import mockSpotify from "./../@data/mockSpotify.json";
-import { SpotifySample } from "../components/SpotifySample";
 
 const Home: NextPage = (props) => {
   const [githubData, setGithubData] = useState<any>([]);
@@ -22,13 +18,6 @@ const Home: NextPage = (props) => {
       username: "premiare",
       sort: "updated",
     });
-
-    // const allRepos = await octokit.request("GET /user/repos", {
-    //   headers: {
-    //     Authorization: `token ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
-    //     "X-GitHub-Api-Version": "2022-11-28",
-    //   },
-    // });
 
     const reposData = repos.data;
     console.log({
