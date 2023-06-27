@@ -34,6 +34,9 @@ module.exports = {
         ubuntu: "#dd4814",
         windows: "#00adef",
         wsl: "#4d4d4d",
+        storyblok: "",
+        storybook: "",
+        railway: "",
       },
       fontFamily: {
         sans: ["Manrope", "sans-serif"],

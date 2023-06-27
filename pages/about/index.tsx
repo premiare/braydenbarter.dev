@@ -18,6 +18,7 @@ const About = () => {
     tech["jquery"],
     tech["mantine"],
     tech["expo"],
+    tech["railway"]
   ];
 
   const Tools = [
@@ -28,6 +29,8 @@ const About = () => {
     tech["vercel"],
     tech["wsl"],
     tech["windows"],
+    tech["storyblok"],
+    tech["storybook"]
   ];
 
   const Design = [tech["figma"], tech["premiere"], tech["photoshop"]];

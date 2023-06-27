@@ -25,6 +25,9 @@ import {
   SiUbuntu,
   SiWindows,
   SiExpo,
+  SiStoryblok,
+  SiStorybook,
+  SiRailway
 } from "react-icons/si";
 import { IconBrandMantine } from "@tabler/icons";
 
@@ -201,4 +204,22 @@ export const TECH: any = {
     class: "text-expo",
     color: "#000020",
   },
+  storyblok: {
+    icon: <SiStoryblok />,
+    name: "Storyblok",
+    class: "text-storyblok",
+    color: ""
+  },
+  storybook: {
+    icon: <SiStorybook />,
+    name: "Storybook",
+    class: "text-storybook",
+    color: ""
+  },
+  railway: {
+    icon: <SiRailway />,
+    name: "Railway",
+    class: "text-railway",
+    color: ""
+  }
 };
