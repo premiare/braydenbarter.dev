@@ -20,8 +20,16 @@ export const projects = [
     slug: "neuws",
     title: "Neuws",
     description:
-      "Neuws is a React Native / Expo app that allows users to personalize their news feed by selecting their favorite news sources and topics and blocks out the rest. This is a full stack project with custom API endpoints, authentication and a PostgreSQL database with Supabase.",
-    tech: ["react", "expo", "typescript", "tailwind", "supabase", "node"],
+      "Neuws is a personalized news app that allows users to control their news intake. It's a full app suite with a web app, iOS & Android app and browser extension. This project is built with Next.js, Expo, Tailwind, TypeScript, Supabase, Node.js and Railway. It covers a wide range of key demonstratable abilities for a full stack application such as authentication, database management, API usage, mobile development, web development, testing and deployment.",
+    tech: [
+      "react",
+      "expo",
+      "typescript",
+      "tailwind",
+      "supabase",
+      "node",
+      "railway",
+    ],
     link: "https://neuws.app",
     image: "./Neuws-Personalized-News.png",
     code: false,
@@ -31,7 +39,7 @@ export const projects = [
     slug: "portfolio-v2",
     title: "Portfolio v2",
     description:
-      "This is my current portfolio website. It's built with Next.js, Tailwind CSS and TypeScript aas well as utilizing third party APIs such as GitHub and Spotify.",
+      "This is my current portfolio website. It's built with Next.js, Tailwind CSS and TypeScript as well as utilizing third party APIs such as GitHub and Spotify.",
     tech: ["next", "tailwind", "typescript"],
     link: "/",
     image: "https://picsum.photos/1600/900",
