@@ -6,7 +6,7 @@ type Props = {};
 export const SpotifyStats = ({ topTracks }: { topTracks: any }) => {
   return (
     <>
-      <div className="flex flex-wrap w-3/6 mx-auto gap-2 align-start items-start">
+      <div className="flex flex-wrap w-5/6 mx-auto gap-2 align-start items-center justify-center p-2 mt-12">
         {/* <button onClick={() => console.log("clicked")}>
           The Oh Shit Stop the Song Button
         </button> */}

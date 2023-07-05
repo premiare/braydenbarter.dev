@@ -3,8 +3,22 @@ import { octokit } from "../lib/octokit";
 import { useEffect, useState } from "react";
 import { LandingActivity } from "../components/LandingActivity";
 import { GitHubRepository, LatestCommitType } from "../types/types";
+import { SpotifyApi } from "@spotify/web-api-ts-sdk";
+
+const sdk = SpotifyApi.withClientCredentials(
+  "0f780178cc1b407a94ca4385e7ce8193",
+  "6e84aaad534c41eab844c42bdc793863",
+  [
+    "user-read-private",
+    "user-read-email",
+    "user-top-read",
+    "user-read-currently-playing",
+  ]
+);
 
 const Home: NextPage = (props) => {
+  console.log("sdk", sdk.currentUser.topItems("tracks"));
+  console.log(props);
   const [githubData, setGithubData] = useState<any>([]);
 
   const getGithubData = async () => {

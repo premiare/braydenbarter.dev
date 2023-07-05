@@ -10,10 +10,13 @@ import { CardWrapper } from "./CardWrapper";
 import Melbourne from "../../public/melbourne_apple.png";
 import { CiLocationOn } from "react-icons/ci";
 import { DiscordInfo } from "../Lanyard";
+import { Lanyard } from "../../lib/lanyard";
 
 export const DiscordCard = () => {
+  const { info } = Lanyard();
+  console.log(info);
   return (
-    <CardWrapper color="rgba(114, 137, 218, 0.25)">
+    <CardWrapper color="rgba(114, 137, 218, 0.25)" className="lg:w-[250px]">
       <div>
         <div className="flex flex-row gap-2 items-center align-middle z-10">
           <SiDiscord className="text-lg" />
