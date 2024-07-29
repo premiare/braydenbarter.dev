@@ -46,7 +46,7 @@ export const CountdownTimer = ({
     <>
       <div className="flex flex-row items-center justify-center mt-8 text-center md:text-start px-4 md:px-6">
         <p className="w-full flex flex-wrap indent-1 md:flex-row justify-center">
-          My latest commit was{" "}
+          My latest public commit was{" "}
           <span className="flex flex-row ml-[2px]">
             <AnimatedNumber value={removeHyphen(days)} unit="d" />
             <AnimatedNumber value={removeHyphen(hours)} unit="h" />
