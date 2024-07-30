@@ -2,7 +2,7 @@ import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { Manrope } from "@next/font/google";
 import clsx from "clsx";
-const manrope = Manrope();
+const manrope = Manrope({ subsets: ["latin"] });
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
