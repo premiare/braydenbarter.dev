@@ -9,7 +9,7 @@ export interface ProjectProps {
 
 export interface TechType {
   name: string;
-  icon: JSX.Element;
+  icon: React.ReactElement;
 }
 
 export interface NowPlayingSong {
