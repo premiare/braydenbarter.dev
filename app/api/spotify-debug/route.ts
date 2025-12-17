@@ -14,19 +14,11 @@ export async function GET() {
   })}`;
 
   return Response.json({
-    client_id,
-    client_id_matches: client_id === "0f780178cc1b407a94ca4385e7ce8193",
+    has_client_id: !!client_id,
     has_client_secret: !!client_secret,
     redirect_uri,
     auth_url: authUrl,
-    registered_uris: [
-      "https://braydenbarter-dev.vercel.app/",
-      "http://127.0.0.1:3000/callback",
-      "http://127.0.0.1:3000/api/spotify",
-      "https://alecchendev.github.io/spotify-refresh-token",
-      "http://127.0.0.1:3000",
-    ],
-    message: "Check that client_id matches exactly and redirect_uri is in registered_uris",
+    message: "Check that your .env file has NEXT_PUBLIC_SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET",
   });
 }
 
