@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 
 const client_id = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID;
-const client_secret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET;
+const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
 
 export async function GET(request: NextRequest) {
   const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
