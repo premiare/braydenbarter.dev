@@ -15,7 +15,7 @@ import {
 } from "../../lib/lanyard";
 import { SpotifyInfo, DiscordInfo } from "../Lanyard";
 import clsx from "clsx";
-import { SiDiscord, SiSpotify, SiVisualstudio } from "react-icons/si";
+import { SiDiscord, SiSpotify } from "react-icons/si";
 
 const NavLinks = [
   {
@@ -102,7 +102,7 @@ const SocialLink = ({
 }: {
   to: string;
   text: string;
-  icon: JSX.Element;
+  icon: React.ReactElement;
   isMobile: boolean;
   onClick?: () => void;
 }) => {

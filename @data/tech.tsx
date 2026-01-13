@@ -19,38 +19,26 @@ import {
   SiAdobephotoshop,
   SiAdobepremierepro,
   SiPostman,
-  SiVisualstudiocode,
   SiNetlify,
   SiVercel,
   SiUbuntu,
-  SiWindows,
   SiExpo,
   SiStoryblok,
   SiStorybook,
-  SiRailway
+  SiRailway,
+  SiVuedotjs,
+  SiNuxtdotjs,
+  SiCakephp,
+  SiStrapi,
+  SiSanity,
+  SiShadcnui,
+  SiClaude,
+  SiOpenai,
+  SiFlutter,
+  SiMantine,
+  SiPostgresql,
+  SiFlydotio
 } from "react-icons/si";
-import { IconBrandMantine } from "@tabler/icons";
-
-const Mantine = (props: any) => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={props.width || "24"}
-      height={props.height || "24"}
-      preserveAspectRatio="xMidYMid"
-      viewBox={props.viewBox || "0 0 256 258"}
-    >
-      <path
-        fill="#339AF0"
-        d="M256 128.661C256 57.604 198.693 0 128.002 0 57.307 0 0 57.604 0 128.661c0 71.056 57.307 128.662 128 128.662s128-57.606 128-128.662z"
-      ></path>
-      <path
-        fill="#FFF"
-        d="M110.576 64.111a9.707 9.707 0 017.227 1.82 79.107 79.107 0 0111.68 10.685l.874.993h27.61c5.384 0 9.744 4.374 9.744 9.777 0 5.283-4.176 9.583-9.388 9.771l-.357.007h-15.25a77.617 77.617 0 016.426 31.087 77.617 77.617 0 01-5.979 30.03l-.448 1.054h15.242c5.386 0 9.747 4.376 9.747 9.778 0 5.282-4.178 9.584-9.39 9.772l-.357.007H130.34a79.11 79.11 0 01-12.546 11.666 9.715 9.715 0 01-13.63-2.027 9.805 9.805 0 01-1.623-3.451 9.805 9.805 0 011.096-7.409 9.696 9.696 0 012.551-2.82c14.91-11.107 23.469-28.09 23.469-46.602 0-18.511-8.56-35.494-23.469-46.602a9.693 9.693 0 01-2.554-2.82 9.842 9.842 0 01.287-10.521l.243-.346a9.813 9.813 0 016.411-3.849zm-1.755 47.41a14.435 14.435 0 014.728 3.258 14.62 14.62 0 013.105 4.857 14.745 14.745 0 01.995 5.696 14.68 14.68 0 01-4.35 10.096 14.356 14.356 0 01-10.084 4.152 14.356 14.356 0 01-10.088-4.152 14.68 14.68 0 01-4.349-10.096 14.748 14.748 0 01.998-5.696 14.62 14.62 0 013.105-4.857 14.434 14.434 0 014.726-3.257 14.303 14.303 0 0111.214 0z"
-      ></path>
-    </svg>
-  );
-};
 
 export const TECH: any = {
   next: {
@@ -115,7 +103,7 @@ export const TECH: any = {
     color: "#3fcf8e",
   },
   mantine: {
-    icon: <IconBrandMantine height="36" width="36" />,
+    icon: <SiMantine />,
     name: "Mantine",
     class: "text-mantine",
     color: "#339AF0",
@@ -169,7 +157,17 @@ export const TECH: any = {
     color: "#ff6c37",
   },
   vscode: {
-    icon: <SiVisualstudiocode />,
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a1.001 1.001 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a1 1 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/>
+      </svg>
+    ),
     name: "VS Code",
     class: "text-vscode",
     color: "#007acc",
@@ -193,7 +191,17 @@ export const TECH: any = {
     color: "#dd4814",
   },
   windows: {
-    icon: <SiWindows />,
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M3 12V6.75l6-1.32v6.48L3 12zm17-9v8.75l-10 .15V5.21L20 3zM3 13l6 .09v6.81l-6-1.15V13zm17 .25V22l-10-1.8v-6.7l10 .15z"/>
+      </svg>
+    ),
     name: "Windows",
     class: "text-windows",
     color: "#00adef",
@@ -221,5 +229,94 @@ export const TECH: any = {
     name: "Railway",
     class: "text-railway",
     color: ""
+  },
+  shadcn: {
+    icon: <SiShadcnui />,
+    name: "shadcn/ui",
+    class: "text-shadcn",
+    color: "#000000",
+  },
+  vue: {
+    icon: <SiVuedotjs />,
+    name: "Vue.js",
+    class: "text-vue",
+    color: "#4FC08D",
+  },
+  nuxt: {
+    icon: <SiNuxtdotjs />,
+    name: "Nuxt",
+    class: "text-nuxt",
+    color: "#00DC82",
+  },
+  cakephp: {
+    icon: <SiCakephp />,
+    name: "CakePHP",
+    class: "text-cakephp",
+    color: "#D33C43",
+  },
+  strapi: {
+    icon: <SiStrapi />,
+    name: "Strapi",
+    class: "text-strapi",
+    color: "#4945ff",
+  },
+  sanity: {
+    icon: <SiSanity />,
+    name: "Sanity",
+    class: "text-sanity",
+    color: "#f03e2f",
+  },
+  openai: {
+    icon: <SiOpenai />,
+    name: "OpenAI",
+    class: "text-openai",
+    color: "#10a37f",
+  },
+  cursor: {
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        viewBox="0 0 466.73 532.09"
+        width="20"
+        height="20"
+        fill="currentColor"
+      >
+        <path d="M457.43,125.94L244.42,2.96c-6.84-3.95-15.28-3.95-22.12,0L9.3,125.94c-5.75,3.32-9.3,9.46-9.3,16.11v247.99c0,6.65,3.55,12.79,9.3,16.11l213.01,122.98c6.84,3.95,15.28,3.95,22.12,0l213.01-122.98c5.75-3.32,9.3-9.46,9.3-16.11v-247.99c0-6.65-3.55-12.79-9.3-16.11h-.01ZM444.05,151.99l-205.63,356.16c-1.39,2.4-5.06,1.42-5.06-1.36v-233.21c0-4.66-2.49-8.97-6.53-11.31L24.87,145.67c-2.4-1.39-1.42-5.06,1.36-5.06h411.26c5.84,0,9.49,6.33,6.57,11.39h-.01Z"/>
+      </svg>
+    ),
+    name: "Cursor",
+    class: "text-cursor",
+    color: "#000000",
+  },
+  claude: {
+    icon: <SiClaude />,
+    name: "Claude",
+    class: "text-claude",
+    color: "#d97757",
+  },
+  flutter: {
+    icon: <SiFlutter />,
+    name: "Flutter",
+    class: "text-flutter",
+    color: "#02569B",
+  },
+  postgres: {
+    icon: <SiPostgresql />,
+    name: "PostgreSQL",
+    class: "text-postgres",
+    color: "#4169E1",
+  },
+  flyio: {
+    icon: <SiFlydotio />,
+    name: "Fly.io",
+    class: "text-flyio",
+    color: "#7B3FF2",
+  },
+  reactnative: {
+    icon: <SiReact />,
+    name: "React Native",
+    class: "text-react",
+    color: "#61dafb",
   }
 };

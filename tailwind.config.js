@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     ".{js,ts,jsx,tsx}",
@@ -43,6 +44,7 @@ module.exports = {
       },
       backgroundImage: {
         project: "url(http://picsum.photos/1600/900)",
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
       animation: {
         "spin-slow": "spin 3s linear infinite",

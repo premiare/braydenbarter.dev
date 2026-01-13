@@ -1,18 +1,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
-    domains: ["images.unsplash.com", "picsum.photos"],
-  },
-  async redirects() {
-    return [
+    remotePatterns: [
       {
-        source: "/contact",
-        destination: "/",
-        permanent: true,
+        protocol: "https",
+        hostname: "images.unsplash.com",
       },
-    ];
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.discordapp.com",
+      },
+      {
+        protocol: "https",
+        hostname: "i.scdn.co",
+      },
+    ],
   },
 };
 
