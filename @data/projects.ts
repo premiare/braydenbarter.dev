@@ -16,6 +16,16 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+    {
+    display: true,
+    slug: "lemmonade",
+    title: "Lemmonade",
+    description:
+      "FMCG Software for Sales and Operations. A comprehensive platform designed to streamline sales processes and operations management for fast-moving consumer goods companies.",
+    link: "https://lemmonade.au",
+    code: false,
+    tech: ["next.js", "postgres", "typescript", "flutter"],
+  },
   {
     display: true,
     slug: "clash",
@@ -41,16 +51,6 @@ export const projects: Project[] = [
       { title: "DominosMacros", url: "https://www.dominosmacros.com/" },
       { title: "McDonaldsMacros", url: "https://www.mcdonaldsmacros.com/" },
     ],
-  },
-  {
-    display: true,
-    slug: "lemmonade",
-    title: "Lemmonade",
-    description:
-      "FMCG Software for Sales and Operations. A comprehensive platform designed to streamline sales processes and operations management for fast-moving consumer goods companies.",
-    link: "https://lemmonade.au",
-    code: false,
-    tech: ["next.js", "postgres", "typescript", "flutter"],
   },
   {
     display: true,
