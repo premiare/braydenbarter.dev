@@ -19,9 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={clsx("bg-[#1d1d1d]", manrope.className)}>
-        <main>{children}</main>
+    <html lang="en" className="overflow-x-hidden">
+      <body className={clsx("bg-[#1d1d1d] overflow-x-hidden", manrope.className)}>
+        <main className="overflow-x-hidden">{children}</main>
       </body>
     </html>
   );

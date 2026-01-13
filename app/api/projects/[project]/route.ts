@@ -1,4 +1,4 @@
-import { projects } from "../../../../@data/projects.js";
+import { projects } from "../../../../@data/projects";
 import { NextRequest } from "next/server";
 
 export async function GET(

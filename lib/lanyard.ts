@@ -36,34 +36,21 @@ export type LanyardTypes = {
 export const Lanyard = () => {
   const data = useLanyardWS(DISCORD_ID);
 
-  !data && console.log("Attempting to connect to Discord...");
+  // Debug logging for development
+  if (typeof window !== "undefined" && process.env.NODE_ENV === "development") {
+    if (!data) {
+      console.log("[Lanyard] Connecting to Discord WebSocket...");
+    }
+  }
 
   const spotify = useMemo(() => {
-    // First check direct spotify field (primary source)
+    // Spotify data only comes through data.spotify field in Lanyard API
+    // The activities array does not contain Spotify song/artist information
     if (data?.spotify) {
       const { song, artist, album_art_url, track_id } = data.spotify;
       return { song, artist, album_art_url, track_id };
     }
-    
-    // Also check activities array for Spotify activity
-    // Spotify activity in activities has the data directly on the activity object
-    if (data?.activities) {
-      const spotifyActivity = data.activities.find(
-        (activity: any) => activity.name === "Spotify"
-      ) as any;
-      
-      // Spotify activity data is directly on the activity object, not nested
-      if (spotifyActivity?.song && spotifyActivity?.artist) {
-        const { song, artist, album_art_url, track_id } = spotifyActivity;
-        return { 
-          song, 
-          artist, 
-          album_art_url: album_art_url || "", 
-          track_id: track_id || "" 
-        };
-      }
-    }
-    
+
     return null;
   }, [data]);
   const activity = useMemo(() => {
@@ -97,14 +84,14 @@ export const Lanyard = () => {
     return data.discord_status as "online" | "idle" | "dnd" | "offline";
   }, [data]);
 
-  // Debug logging (remove in production)
+  // Debug logging for development
   if (typeof window !== "undefined" && process.env.NODE_ENV === "development") {
-    console.log("Lanyard Data:", {
-      raw: data,
-      spotify,
-      activity,
-      info,
+    console.log("[Lanyard] Current State:", {
+      connected: !!data,
+      listening_to_spotify: data?.listening_to_spotify || false,
+      spotify_data: spotify,
       status,
+      activities_count: data?.activities?.length || 0,
     });
   }
 

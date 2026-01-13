@@ -5,13 +5,6 @@ import fetcher from "../../lib/fetcher";
 import { NowPlayingSong } from "../../types/types";
 import { LanyardTypes } from "../../lib/lanyard";
 
-interface GitHubRepo {
-  name: string;
-  pushed_at: string;
-  html_url: string;
-  private: boolean;
-}
-
 interface TopArtist {
   name: string;
   image: string | null;
@@ -26,12 +19,6 @@ interface HomePillarProps {
 export const HomePillar = ({ lanyardData }: HomePillarProps) => {
   const { data: spotifyData } = useSWR<NowPlayingSong>("/api/spotify", fetcher);
   const { data: topArtistsData } = useSWR<{ artists: TopArtist[] }>("/api/top-artists", fetcher);
-  const { data: githubData } = useSWR<{ reposData: GitHubRepo[] }>("/api/github", fetcher);
-
-  const latestRepo = githubData?.reposData?.sort(
-    (prev, current) =>
-      new Date(current.pushed_at).getTime() - new Date(prev.pushed_at).getTime()
-  )?.[0];
 
   // Determine listening status - prioritize Discord Spotify, then Spotify API
   const listeningStatus = lanyardData?.spotify 
@@ -85,9 +72,9 @@ export const HomePillar = ({ lanyardData }: HomePillarProps) => {
   const statusDisplay = getStatusDisplay();
 
   return (
-    <div className="h-full flex flex-col gap-3 sm:gap-4 md:gap-6 text-neutral-200 pt-2 sm:pt-8 md:pt-16">
+    <div className="h-full w-full max-w-full flex flex-col gap-3 sm:gap-4 md:gap-6 text-neutral-200 pt-2 sm:pt-8 md:pt-16">
       {/* Location with Map */}
-      <div>
+      <div className="w-full max-w-full">
         <p className="text-neutral-200 text-sm sm:text-base mb-2 sm:mb-3 break-words">
           I'm currently in{" "}
           <a
@@ -100,24 +87,25 @@ export const HomePillar = ({ lanyardData }: HomePillarProps) => {
             Melbourne, Australia
           </a>
         </p>
-        <div className="relative w-full h-28 sm:h-32 md:h-40 rounded-xl overflow-hidden border border-neutral-800 bg-neutral-900 shadow-lg">
-          {/* Dark filter overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-neutral-900/50 via-neutral-900/30 to-neutral-900/50 z-10 pointer-events-none rounded-xl" />
-          
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126154.44027643423!2d144.893!3d-37.8136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce6e77!2sMelbourne%20VIC%203000%2C%20Australia!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-            width="100%"
-            height="100%"
-            style={{ 
-              border: 0, 
-              filter: "grayscale(0.5) brightness(0.6) contrast(1.2) saturate(0.7)",
+        <div className="relative w-full max-w-full h-28 sm:h-32 md:h-40 rounded-xl overflow-hidden border border-neutral-800 shadow-lg bg-[#1a1a1a]">
+          {/* Stylized dark map background */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)
+              `,
+              backgroundSize: '100px 100px, 100px 100px, 20px 20px, 20px 20px',
+              backgroundPosition: '-1px -1px, -1px -1px, -1px -1px, -1px -1px',
             }}
-            allowFullScreen={false}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="pointer-events-none"
           />
-          
+
+          {/* Subtle radial gradient for depth */}
+          <div className="absolute inset-0 bg-gradient-radial from-neutral-800/20 via-transparent to-neutral-900/40" />
+
           {/* Custom pin marker */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none">
             <div className="relative">
@@ -157,31 +145,6 @@ export const HomePillar = ({ lanyardData }: HomePillarProps) => {
         )}
       </div>
 
-      {/* Latest Git Commit */}
-      <div className="mt-auto">
-            <h3 className="text-sm font-medium mb-3 text-neutral-400 uppercase tracking-wider break-words">Latest Commit</h3>
-        {latestRepo ? (
-          <div>
-            <a
-              href={latestRepo.html_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-200 hover:text-neutral-100 transition-colors block"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <p className="font-medium break-words">{latestRepo.name}</p>
-              <p className="text-xs sm:text-sm text-neutral-500 mt-1 break-words">
-                {new Date(latestRepo.pushed_at).toLocaleDateString()}
-              </p>
-              <p className="text-[10px] sm:text-xs text-neutral-600 mt-2 break-words">
-                {latestRepo.private ? "Private" : "Public"}
-              </p>
-            </a>
-          </div>
-        ) : (
-          <p className="text-neutral-600 text-sm">Loading...</p>
-        )}
-      </div>
     </div>
   );
 };

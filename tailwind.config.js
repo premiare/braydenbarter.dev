@@ -44,6 +44,7 @@ module.exports = {
       },
       backgroundImage: {
         project: "url(http://picsum.photos/1600/900)",
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
       animation: {
         "spin-slow": "spin 3s linear infinite",
