@@ -18,6 +18,7 @@ export const PillarContainer = () => {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const prevMobileRef = useRef<boolean | null>(null);
+  const layoutKeyRef = useRef(0);
   const lanyardData = Lanyard();
 
   const pillars: Pillar[] = [
@@ -38,9 +39,12 @@ export const PillarContainer = () => {
         setIsMobile(nowMobile);
         setExpandedId("home");
       } else if (wasMobile !== nowMobile) {
-        // Screen size changed - keep "home" open
-        setExpandedId("home");
+        // Screen size changed - reset layout key to force remount and reset animation state
+        layoutKeyRef.current += 1;
+        // Update mobile state
         setIsMobile(nowMobile);
+        // Preserve current expanded state, or default to "home" if none
+        setExpandedId((currentExpanded) => currentExpanded || "home");
       } else {
         setIsMobile(nowMobile);
       }
@@ -51,9 +55,18 @@ export const PillarContainer = () => {
     // Run immediately
     checkMobile();
     
-    // Then listen for changes
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    // Then listen for changes with debouncing to prevent excessive updates
+    let resizeTimeout: NodeJS.Timeout;
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(checkMobile, 150);
+    };
+    
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(resizeTimeout);
+    };
   }, []);
 
   const handlePillarClick = (id: string) => {
@@ -71,7 +84,7 @@ export const PillarContainer = () => {
 
           return (
             <motion.div
-              key={pillar.id}
+              key={`${pillar.id}-${isMobile ? 'mobile' : 'desktop'}-${layoutKeyRef.current}`}
               className={`relative w-full md:w-[20%] md:min-w-[120px] max-w-full min-w-0 flex flex-col`}
               initial={false}
               animate={
@@ -87,6 +100,7 @@ export const PillarContainer = () => {
                       width: isExpanded ? "65%" : isShrunk ? "10%" : "20%",
                       minWidth: isExpanded ? "500px" : isShrunk ? "60px" : "120px",
                       height: "100%",
+                      maxHeight: "none",
                     }
               }
               transition={{ 

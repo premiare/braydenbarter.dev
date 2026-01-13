@@ -13,8 +13,6 @@ export const SpotifySample = ({
   Howler.volume(0.1);
 
   const handlePlaySound = () => {
-    console.log("playing sound");
-    console.log(soundRef.current);
     if (!soundRef.current) {
       soundRef.current = new Howl({
         src: [src], // Update with the actual path to your audio file

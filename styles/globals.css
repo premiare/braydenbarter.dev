@@ -1,3 +1,5 @@
+@import "maplibre-gl/dist/maplibre-gl.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -38,4 +40,30 @@ body {
     color: white;
     background: #0a0a0a;
   }
+}
+
+/* MapLibre GL Styles */
+.maplibregl-ctrl-group {
+  background: rgba(23, 23, 23, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+}
+
+.maplibregl-ctrl button {
+  background: transparent !important;
+  color: #e5e5e5 !important;
+}
+
+.maplibregl-ctrl button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.maplibregl-ctrl-attrib {
+  background: rgba(23, 23, 23, 0.8) !important;
+  color: #a3a3a3 !important;
+  font-size: 10px !important;
+}
+
+.maplibregl-marker {
+  cursor: pointer;
 }

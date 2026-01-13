@@ -1,5 +1,7 @@
+"use client";
+
 import { useMemo } from "react";
-import { useLanyard, useLanyardWS } from "use-lanyard";
+import { useLanyardWS } from "use-lanyard";
 
 const DISCORD_ID = "227252253323427840";
 
@@ -18,6 +20,17 @@ export type Activity = {
   emoji?: any;
   flags?: number;
   application_id?: string;
+  assets?: {
+    large_image?: string;
+    large_text?: string;
+    small_image?: string;
+    small_text?: string;
+  };
+  sync_id?: string;
+  timestamps?: {
+    start?: number;
+    end?: number;
+  };
 };
 
 export type Info = {
@@ -33,26 +46,47 @@ export type LanyardTypes = {
   status: "online" | "idle" | "dnd" | "offline" | null;
 };
 
-export const Lanyard = () => {
+export const Lanyard = (): LanyardTypes => {
   const data = useLanyardWS(DISCORD_ID);
 
-  // Debug logging for development
-  if (typeof window !== "undefined" && process.env.NODE_ENV === "development") {
-    if (!data) {
-      console.log("[Lanyard] Connecting to Discord WebSocket...");
-    }
-  }
-
   const spotify = useMemo(() => {
-    // Spotify data only comes through data.spotify field in Lanyard API
-    // The activities array does not contain Spotify song/artist information
-    if (data?.spotify) {
+    // Primary: Check the spotify object from Lanyard
+    if (data?.spotify && data.spotify.song) {
       const { song, artist, album_art_url, track_id } = data.spotify;
-      return { song, artist, album_art_url, track_id };
+      // Handle nullable fields from use-lanyard
+      if (song && artist) {
+        return { 
+          song, 
+          artist, 
+          album_art_url: album_art_url || "", 
+          track_id: track_id || "" 
+        };
+      }
     }
-
+    
+    // Fallback: Check activities array for Spotify activity
+    if (data?.activities) {
+      const spotifyActivity = data.activities.find(
+        (activity) => activity.name === "Spotify" && activity.type === 2
+      );
+      if (spotifyActivity) {
+        // Parse Spotify data from activity
+        const song = spotifyActivity.details || "";
+        const artist = spotifyActivity.state || "";
+        const album_art_url = spotifyActivity.assets?.large_image 
+          ? `https://i.scdn.co/image/${spotifyActivity.assets.large_image.replace("spotify:", "")}`
+          : "";
+        const track_id = spotifyActivity.sync_id || "";
+        
+        if (song && artist) {
+          return { song, artist, album_art_url, track_id };
+        }
+      }
+    }
+    
     return null;
   }, [data]);
+
   const activity = useMemo(() => {
     if (!data?.activities) return null;
     if (data.activities.length) {
@@ -67,7 +101,7 @@ export const Lanyard = () => {
       }
 
       const { name, type, details, emoji, flags, application_id } =
-        data?.activities[0];
+        data.activities[0];
       return { name, type, details, emoji, flags, application_id };
     }
     return null;
@@ -76,24 +110,14 @@ export const Lanyard = () => {
   const info = useMemo(() => {
     if (!data?.discord_user) return null;
     const { username, discriminator, avatar } = data.discord_user;
-    return { username, discriminator, avatar };
+    // Handle nullable avatar from use-lanyard
+    return { username, discriminator, avatar: avatar || "" };
   }, [data]);
 
   const status = useMemo(() => {
     if (!data?.discord_status) return null;
     return data.discord_status as "online" | "idle" | "dnd" | "offline";
   }, [data]);
-
-  // Debug logging for development
-  if (typeof window !== "undefined" && process.env.NODE_ENV === "development") {
-    console.log("[Lanyard] Current State:", {
-      connected: !!data,
-      listening_to_spotify: data?.listening_to_spotify || false,
-      spotify_data: spotify,
-      status,
-      activities_count: data?.activities?.length || 0,
-    });
-  }
 
   return { activity, spotify, info, status };
 };

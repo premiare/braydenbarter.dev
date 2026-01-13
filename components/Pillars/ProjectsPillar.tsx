@@ -11,19 +11,19 @@ export const ProjectsPillar = () => {
         {displayedProjects.map((project, index) => (
           <article
             key={project.slug}
-            className="group relative border border-neutral-800 rounded-xl p-4 sm:p-5
+            className="group/project relative border border-neutral-800 rounded-xl p-4 sm:p-5
                        hover:border-neutral-700 hover:bg-neutral-800/30
                        transition-all duration-300 ease-out"
           >
             {/* Subtle gradient accent on hover */}
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-teal-500/5 via-transparent to-transparent
-                            opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                            opacity-0 group-hover/project:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
             {/* Header: Title + Status */}
             <header className="relative flex items-start justify-between gap-3 mb-3">
               <div className="flex items-center gap-2.5 flex-wrap min-w-0">
                 <h3 className="text-base sm:text-lg font-semibold text-neutral-100
-                               group-hover:text-white transition-colors duration-200">
+                               group-hover/project:text-white transition-colors duration-200">
                   {project.title}
                 </h3>
                 {project.status === "in-development" && (
@@ -45,7 +45,7 @@ export const ProjectsPillar = () => {
 
             {/* Description */}
             <p className="relative text-xs sm:text-sm text-neutral-400 mb-4 leading-relaxed
-                          line-clamp-3 group-hover:text-neutral-300 transition-colors duration-200">
+                          line-clamp-3 group-hover/project:text-neutral-300 transition-colors duration-200">
               {project.description}
             </p>
 
@@ -57,7 +57,7 @@ export const ProjectsPillar = () => {
                   className="px-2 py-1 text-[10px] sm:text-xs font-medium
                              bg-neutral-800/80 border border-neutral-700/50 rounded-md
                              text-neutral-400
-                             group-hover:border-neutral-600/50 group-hover:text-neutral-300
+                             group-hover/project:border-neutral-600/50 group-hover/project:text-neutral-300
                              transition-all duration-200"
                 >
                   {techName}
