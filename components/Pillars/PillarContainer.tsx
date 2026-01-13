@@ -90,14 +90,14 @@ export const PillarContainer = () => {
                     }
               }
               transition={{ 
-                duration: 0.3, 
+                duration: 0.6, 
                 ease: [0.25, 0.1, 0.25, 1],
-                layout: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }
+                layout: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }
               }}
             >
               {/* Pillar Frame */}
               <div
-                className={`group relative w-full max-w-full min-w-0 h-full border rounded-xl transition-all duration-300 ${
+                    className={`group relative w-full max-w-full min-w-0 h-full border rounded-xl transition-all duration-700 ${
                   isExpanded
                     ? `border-neutral-700 bg-neutral-800 shadow-xl overflow-hidden ${isMobile ? "flex flex-col" : ""}`
                     : `border-neutral-800 bg-neutral-900 hover:border-neutral-700 active:border-neutral-700 active:scale-[0.98] overflow-hidden ${!isMobile ? "cursor-pointer" : ""}`
@@ -129,7 +129,7 @@ export const PillarContainer = () => {
                       scale: isExpanded ? 0.85 : 1,
                       rotate: 180,
                     }}
-                    transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
+                    transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                     style={{
                       writingMode: "vertical-rl",
                       textOrientation: "mixed",
@@ -155,7 +155,7 @@ export const PillarContainer = () => {
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
-                          transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                          transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                           className="flex items-center justify-between px-4 sm:px-6 pt-5 sm:pt-6 pb-3 z-30 relative border-b border-neutral-700/50"
                         >
                           <h2 className="text-xl sm:text-2xl font-semibold text-neutral-100">
@@ -179,7 +179,7 @@ export const PillarContainer = () => {
                           initial={{ opacity: 0, y: -20, scale: 0.9 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: -20, scale: 0.9 }}
-                          transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1], delay: 0.15 }}
+                          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
                           className="absolute top-8 left-6 right-6 z-30 flex items-center justify-between"
                         >
                           <h2 className="text-3xl font-semibold text-neutral-100 pointer-events-none">
@@ -212,12 +212,12 @@ export const PillarContainer = () => {
                         opacity: 0, 
                         y: 4,
                         transition: { 
-                          duration: 0.2, 
+                          duration: 0.4, 
                           ease: [0.25, 0.1, 0.25, 1]
                         }
                       }}
                       transition={{ 
-                        duration: 0.25, 
+                        duration: 0.5, 
                         ease: [0.25, 0.1, 0.25, 1]
                       }}
                       className={`w-full max-w-full ${isMobile ? "flex-1 overflow-y-auto" : "h-full overflow-y-auto"} ${isMobile ? "p-4 sm:p-5" : "p-4 sm:p-6 md:p-8"} relative z-20 break-words`}
