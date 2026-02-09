@@ -56,9 +56,9 @@ export const projects: Project[] = [
     display: true,
     slug: "fabl",
     title: "Fabl",
-    status: "in-development",
+    status: "live",
     description:
-      "AI-powered music label matching platform. Analyzes tracks to identify characteristics and matches independent artists with compatible record labels, providing direct contact and submission details.",
+      "AI-powered music label matching platform with 1,700+ indexed labels. Analyzes tracks for BPM, key, genre, mood, and production quality in under 30 seconds. Features intelligent label matching with compatibility scores, AI mix feedback, promo video generation, and submission tracking. Helps independent artists find the right labels and reduce rejection rates.",
     link: "https://fabl.app/",
     code: false,
     tech: ["next.js", "typescript", "openai", "supabase"],
