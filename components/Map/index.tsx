@@ -1,7 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import maplibregl from "maplibre-gl";
+import * as maplibregl from "maplibre-gl";
+
+// maplibre-gl 6 loads its worker from beside its own file, which a bundle
+// does not keep, so the build copies it into public/ (prebuild in package.json)
+maplibregl.setWorkerUrl("/maplibre-gl-worker.mjs");
 
 interface MapProps {
   center?: [number, number];

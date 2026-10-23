@@ -40,3 +40,5 @@ next-env.d.ts
 certificates
 
 .playwright-mcp/*
+# copied from maplibre-gl by prebuild
+/public/maplibre-gl-worker.mjs
